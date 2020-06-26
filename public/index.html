@@ -30,7 +30,7 @@
         <v-main>
           <!-- title section -->
           <v-container
-            class="fill-height container-relative"
+            class="fill-height true-fill-height container-relative"
             style="background-color: #f4511e;"
             fluid
           >
@@ -49,7 +49,7 @@
 
                 <v-btn
                   class="mt-lg-16 mt-sm-5 primary--text"
-                  x-large
+                  v-bind="size"
                   rounded
                   color="white"
                   >Jelajahi Kategori</v-btn
@@ -59,7 +59,7 @@
 
                 <v-btn
                   class="mt-lg-16 mt-sm-5 white--text"
-                  x-large
+                  v-bind="size"
                   rounded
                   outlined
                   color="grey lighten-2"
@@ -72,7 +72,7 @@
 
             <div class="center-item">
               <div class="text-lg-h5 white--text">Lihat Iklan</div>
-              <v-icon large dark> keyboard_arrow_down </v-icon>
+              <v-icon v-bind="size" dark> keyboard_arrow_down </v-icon>
             </div>
           </v-container>
           <!-- end of title section -->
@@ -82,7 +82,7 @@
               <v-col cols="1"></v-col>
               <v-col cols="10">
                 <!-- iklan teratas -->
-                <div class="text-h4 my-10">Iklan Teratas</div>
+                <div class="text-lg-h4 text-sm-h5 my-10">Iklan Teratas</div>
 
                 <div class="container-relative">
                   <img
@@ -104,7 +104,7 @@
                   <!-- rating  -->
                   <div class="top-rating d-flex flex-row align-center">
                     <v-rating
-                      large
+                      v-bind="size"
                       background-color="black"
                       color="black"
                     ></v-rating>
@@ -114,8 +114,22 @@
                 <!-- end of iklan teratas -->
 
                 <!-- rekomendasi untuk anda -->
-                <div class="text-h4 my-10">Rekomendasi untuk Anda</div>
-                <test></test>
+                <div class="text-lg-h4 text-sm-h5 my-10">
+                  Rekomendasi untuk Anda
+                </div>
+                <v-container class="d-flex flex-lg-row flex-wrap">
+                  <div v-for="n in 4">
+                    <card-item
+                      item-title="Kebaya Pengantin Pink Perempuan Modern"
+                      item-cat="Fashion"
+                      item-price="Rp. 30rb/hari"
+                      item-img="./assets/item2.jpg"
+                      item-user-rating="52"
+                      item-rating="3"
+                    ></card-item>
+                  </div>
+                </v-container>
+
                 <!-- end of rekomendasi -->
               </v-col>
               <v-col cols="1"></v-col>
@@ -127,23 +141,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-    <script src="./component/navbar.js"></script>
-
-    <script>
-      new Vue({
-        el: '#app',
-        vuetify: new Vuetify({
-          theme: {
-            themes: {
-              light: {
-                primary: '#f4511e',
-                accent: '#ffffff',
-                dark: '#000000',
-              },
-            },
-          },
-        }),
-      });
-    </script>
+    <script src="./component/cardItem.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
