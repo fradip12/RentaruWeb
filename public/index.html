@@ -1,13 +1,138 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
 
-<head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="./style.css" rel="stylesheet" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <v-app>
+        <v-main>
+          <!-- title section -->
+          <v-container
+            class="fill-height container-relative"
+            style="background-color: #f4511e;"
+            fluid
+          >
+            <v-row no-gutters>
+              <v-col cols="1"></v-col>
+              <v-col cols="6">
+                <div class="text-h2 white--text">Sewa Barang dan Jasa ?</div>
 
-<body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
+                <br />
 
+                <div class="mt-5 text-h3 white--text">Rentaru saja!</div>
+
+                <v-btn class="mt-16 primary--text" x-large rounded color="white"
+                  >Jelajahi Kategori</v-btn
+                >
+
+                <br />
+
+                <v-btn
+                  class="mt-16 white--text"
+                  x-large
+                  rounded
+                  outlined
+                  color="grey lighten-2"
+                  >Pelajari Lebih Lanjut</v-btn
+                >
+              </v-col>
+
+              <v-col cols="5"> </v-col>
+            </v-row>
+
+            <div class="center-item">
+              <div class="text-h5 white--text">Lihat Iklan</div>
+              <v-icon large dark> keyboard_arrow_down </v-icon>
+            </div>
+          </v-container>
+          <!-- end of title section -->
+
+          <v-container fluid>
+            <v-row no-gutters>
+              <v-col cols="1"></v-col>
+              <v-col cols="10">
+                <!-- iklan teratas -->
+                <div class="text-h4 my-10">Iklan Teratas</div>
+
+                <div class="container-relative">
+                  <img
+                    class="top-image"
+                    src="./assets/item1.jpeg"
+                    alt="iklan teratas"
+                  />
+
+                  <!-- overlay box -->
+                  <div class="top-text">
+                    <div class="text-h4">Paket Liburan 2 Hari 1 Malam</div>
+                    <div class="text-h6">
+                      Pesan sekarang dan dapatkan diskon 20%
+                    </div>
+                  </div>
+
+                  <!-- rating  -->
+                  <div class="top-rating d-flex flex-row align-center">
+                    <v-rating
+                      large
+                      background-color="black"
+                      color="black"
+                    ></v-rating>
+                    <div class="text-h6">(153)</div>
+                  </div>
+                </div>
+                <!-- end of iklan teratas -->
+
+                <!-- rekomendasi untuk anda -->
+                <div class="text-h4 my-10">Rekomendasi untuk Anda</div>
+
+                <!-- end of rekomendasi -->
+              </v-col>
+              <v-col cols="1"></v-col>
+            </v-row>
+          </v-container>
+        </v-main>
+      </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+
+    <script>
+      new Vue({
+        el: '#app',
+        vuetify: new Vuetify({
+          theme: {
+            themes: {
+              light: {
+                primary: '#f4511e',
+                accent: '#ffffff',
+                dark: '#000000',
+              },
+            },
+          },
+        }),
+      });
+    </script>
+  </body>
 </html>
