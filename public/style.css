@@ -41,3 +41,16 @@
   right: 10px;
   flex-direction: row;
 }
+
+@media screen and (max-width: 1264px) {
+  .center-item {
+    bottom: 20px;
+  }
+
+  .top-text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
