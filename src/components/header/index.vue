@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Main from './header/Main.vue';
-import Upper from './header/Upper.vue';
+import Main from './main';
+import Upper from './upper';
 
 export default {
   name: 'Header',
