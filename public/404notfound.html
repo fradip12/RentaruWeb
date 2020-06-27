@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <div class="elevation-2">
+          <div class="secondary tersier--text">
+            <v-container class="pt-2 pb-2">
+              <v-row align="center" dense>
+                <v-btn class="tersier--text" x-small depressed text>
+                  <v-icon left small>mdi-cellphone</v-icon>
+                  Unduh Aplikasi Rentaru
+                </v-btn>
+                <v-spacer></v-spacer>
+                <v-btn v-for="item in ['Hubungi Kami', 'Bantuan', 'Bahasa']"
+                  class="tersier--text" x-small depressed text>
+                  {{item}}
+                </v-btn>
+              </v-row>
+            </v-container>
+          </div>
+          <div class="primary">
+            <v-container>
+              <v-row align="center" dense>
+                <h1 class="tersier--text">RENTARU</h1>
+                <v-text-field placeholder="Saya mencari..." background-color="tersier"
+                  append-icon="mdi-magnify" dense rounded solo hide-details flat
+                  class="pl-8">
+                </v-text-field>
+                <div class="pl-4 pr-4">
+                  <v-btn v-for="item in ['mdi-cart', 'mdi-message-text', 'mdi-bell', 'mdi-account']"
+                    icon color="tersier">
+                    <v-badge v-if="item == 'mdi-cart'" color="secondary" content="5" overlap>
+                      <v-icon>{{item}}</v-icon>
+                    </v-badge>
+                    <v-icon v-else>{{item}}</v-icon>
+                  </v-btn>
+                </div>
+                <v-btn rounded color="tersier" class="primary--text" depressed>
+                  Pasang Iklan
+                </v-btn>
+              </v-row>
+            </v-container>
+          </div>
+        </div>
+
+        <div class="mt-16 mb-16">
+  	  <v-container class="pt-2 pb-2">
+	    <center>
+  	      <img src="https://www.vippng.com/png/full/375-3750100_404-404-png.png" height="45%" width="45%">
+	    </center>
+	    <br>
+	        <div style="text-align:center">
+		   <h1 class="primary--text">Halaman yang Anda cari tidak ditemukan.</h1>
+		   <br>
+		   <br>
+		   <v-btn rounded color="primary" class="tersier--text" depressed> Kembali ke Beranda
+	        </div>
+ 	  </v-container>
+        </div>
+
+        <div class="primary">
+          <v-container class="accent--text">
+            <v-row>
+              <v-col cols="6">
+                <h2 style="display: inline;">RENTARU</h3>
+                <h4 style="display: inline;">&#169;2020</h6>
+                <v-row>
+                  <v-col cols="6">
+                    <a class="accent--text">Tentang Rentaru</a>
+                    <br>
+                    <a class="accent--text">Frequently Asked Question</a>
+                  </v-col>
+                  <v-col cols="6">
+                    <a class="accent--text">Ketentuan Hukum</a>
+                    <br>
+                    <a class="accent--text">Kebijakan Privasi</a>
+                  </v-col>
+                </v-row>
+              </v-col>
+              <v-col offset="2" cols="4">
+                <h2 class="mb-4">Ikuti Kami:</h3>
+                <v-btn v-for="item in ['mdi-facebook', 'mdi-twitter',
+                'mdi-instagram', 'mdi-email', 'mdi-linkedin']"
+                class="mr-4" fab depressed small color="tersier">
+                  <v-icon color="primary">{{item}}</v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify({
+        theme: {
+          themes: {
+            light: {
+              primary: '#ee4000',
+              secondary: '#ce3800',
+              tersier: '#f5f5f5',
+              accent: '#ffffff',
+            },
+          },
+        },
+      }),
+    })
+  </script>
+</body>
+</html>
