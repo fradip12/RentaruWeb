@@ -1,0 +1,5 @@
+.box-img {
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+}
