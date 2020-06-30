@@ -85,7 +85,7 @@
           <v-col cols="1"></v-col>
         </v-row>
       </v-container>
-
+      <statistics />
       <unduh-app />
       <Footer />
     </v-main>
@@ -96,6 +96,7 @@
 import CardItem from "@/components/homepage/carditem";
 import Title from "@/components/homepage/title";
 import UnduhApp from "@/components/homepage/unduhapp";
+import Statistics from "@/components/homepage/statistics";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import ExternalAds from "@/components/externalads";
@@ -110,7 +111,8 @@ export default {
     CardItem,
     ExternalAds,
     Title,
-    UnduhApp
+    UnduhApp,
+    Statistics
   },
 
   data: () => ({
