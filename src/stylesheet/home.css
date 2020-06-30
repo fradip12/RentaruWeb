@@ -1,0 +1,56 @@
+.center-item {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  text-align: center;
+}
+
+.container-relative {
+  position: relative;
+}
+
+.true-fill-height {
+  height: 90vh;
+}
+
+.top-image {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.top-text {
+  position: absolute;
+  bottom: 6px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.top-rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1264px) {
+  .center-item {
+    bottom: 20px;
+  }
+
+  .top-text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
