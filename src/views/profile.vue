@@ -236,8 +236,8 @@
 </template>
 
 <script>
-import Footer from '../components/Footer.vue';
-import Header from '../components/Header.vue';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 
 export default {
   name: 'Profile',

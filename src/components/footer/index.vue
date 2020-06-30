@@ -1,5 +1,5 @@
 <template>
-  <div class="primary mt-32">
+  <div class="primary mt-16">
     <v-container class="accent--text">
       <v-row>
         <v-col cols="6">
@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import Hyperlink from './footer/Hyperlink.vue';
-import IconButton from './footer/IconButton.vue';
+import Hyperlink from './hyperlink';
+import IconButton from './icon-button';
 
 export default {
   name: 'Footer',

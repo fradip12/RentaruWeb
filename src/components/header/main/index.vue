@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import Button from './main/Button.vue';
-import IconButton from './main/IconButton.vue';
-import SearchBar from './main/SearchBar.vue';
+import Button from './button';
+import IconButton from './icon-button';
+import SearchBar from './search-bar';
 
 export default {
   name: 'HeaderMain',

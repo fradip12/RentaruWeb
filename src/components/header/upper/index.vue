@@ -2,25 +2,25 @@
   <div class="secondary tersier--text">
     <v-container class="pt-0 pb-0">
       <v-row align="center" dense>
-        <UpperButton v-for="item in leftButtons" :key="item.text"
+        <Button v-for="item in leftButtons" :key="item.text"
           :text="item.text" :icon="item.icon" :href="item.href">
-        </UpperButton>
+        </Button>
         <v-spacer></v-spacer>
-        <UpperButton v-for="item in rightButtons" :key="item.text"
+        <Button v-for="item in rightButtons" :key="item.text"
           :text="item.text" :icon="item.icon" :href="item.href">
-        </UpperButton>
+        </Button>
       </v-row>
     </v-container>
   </div>
 </template>
 
 <script>
-import UpperButton from './upper/Button.vue';
+import Button from './button';
 
 export default {
   name: 'HeaderUpper',
   components: {
-    UpperButton,
+    Button,
   },
   data: () => ({
     leftButtons: [

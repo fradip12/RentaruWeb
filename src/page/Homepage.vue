@@ -95,9 +95,9 @@
 <script>
 import CardItem from "../components/homepage/CardItem.vue";
 import Title from "../components/homepage/Title.vue";
-import UnduhApp from "../components/homepage/UnduhApp.vue";
-import Footer from "../components/Footer.vue";
-import Header from "../components/Header.vue";
+import UnduhApp from '@/components/homepage/UnduhApp.vue';
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import ExternalAds from "../components/ExternalAds.vue";
 
 import "../stylesheet/home.css";
