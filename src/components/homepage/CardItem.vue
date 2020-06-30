@@ -35,7 +35,6 @@
             <div
               :class="{
                 'grey--text': true,
-                'text-sm-caption': true,
                 'text-lg-h6': !small,
                 'text-lg-body-2': small
               }"
@@ -43,7 +42,14 @@
               {{ itemCat }}
             </div>
 
-            <div class="text-lg-h5 text-sm-body-2 orange--text mt-5">
+            <div
+              :class="{
+                'mt-10': true,
+                'orange--text': true,
+                'text-lg-h5': !small,
+                'text-lg-body-1': small
+              }"
+            >
               {{ itemPrice }}
             </div>
 
@@ -57,8 +63,9 @@
                 :value="itemRating"
                 background-color="black"
                 dense
+                :x-small="small"
               ></v-rating>
-              <div class="text-sm-caption text-lg-h5">
+              <div :class="{ 'text-lg-h5': !small, 'text-lg-body-2': small }">
                 ({{ itemUserRating }})
               </div>
             </v-row>
@@ -70,7 +77,8 @@
         fab
         color="primary"
         absolute
-        style="right:-28px;bottom:10vw;"
+        :small="small"
+        :class="{ 'btn-fab': !small, 'small-btn-fab': small }"
       >
         <v-icon>search</v-icon>
       </v-btn>

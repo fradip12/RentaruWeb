@@ -90,7 +90,7 @@
   </v-app>
 </template>
 
-    <script>
+<script>
 import CardItem from "../components/homepage/CardItem.vue";
 import Title from "../components/homepage/Title.vue";
 import Footer from "../components/Footer.vue";

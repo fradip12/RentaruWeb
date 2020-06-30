@@ -54,6 +54,16 @@
   object-fit: cover;
 }
 
+.btn-fab {
+  right: -28px;
+  bottom: 9vw;
+}
+
+.small-btn-fab {
+  right: -18px;
+  bottom: 6vw;
+}
+
 @media screen and (max-width: 1264px) {
   .center-item {
     bottom: 20px;
