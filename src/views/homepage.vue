@@ -80,6 +80,18 @@
               </div>
             </v-container>
 
+            <div class="d-flex justify-center">
+              <v-btn
+                class="align-self-center"
+                color="orange"
+                outlined
+                rounded
+                x-large
+                width="20vw"
+                >Muat Lebih Banyak</v-btn
+              >
+            </div>
+
             <!-- end of minati -->
           </v-col>
           <v-col cols="1"></v-col>
