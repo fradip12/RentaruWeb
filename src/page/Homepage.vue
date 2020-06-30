@@ -85,6 +85,8 @@
           <v-col cols="1"></v-col>
         </v-row>
       </v-container>
+
+      <unduh-app />
       <Footer />
     </v-main>
   </v-app>
@@ -93,6 +95,7 @@
 <script>
 import CardItem from "../components/homepage/CardItem.vue";
 import Title from "../components/homepage/Title.vue";
+import UnduhApp from "../components/homepage/UnduhApp.vue";
 import Footer from "../components/Footer.vue";
 import Header from "../components/Header.vue";
 import ExternalAds from "../components/ExternalAds.vue";
@@ -106,7 +109,8 @@ export default {
     Header,
     CardItem,
     ExternalAds,
-    Title
+    Title,
+    UnduhApp
   },
 
   data: () => ({
