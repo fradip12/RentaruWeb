@@ -3,3 +3,19 @@
   height: 20vw;
   object-fit: cover;
 }
+
+.small-box-img {
+  width: 15vw;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.btn-fab {
+  right: -28px;
+  bottom: 9vw;
+}
+
+.small-btn-fab {
+  right: -18px;
+  bottom: 6vw;
+}

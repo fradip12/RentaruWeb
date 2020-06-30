@@ -12,7 +12,7 @@
           aplikasi di genggaman anda.
         </div>
         <v-row>
-          <v-btn dark class="pa-8 ma-5 rounded-lg" width="250px" height="80px">
+          <v-btn dark class="pa-8 ma-5 rounded-lg" width="260px" height="80px">
             <v-row>
               <v-icon size="50">fab fa-apple</v-icon>
               <v-col class="justify-start">
@@ -23,7 +23,7 @@
               </v-col>
             </v-row>
           </v-btn>
-          <v-btn dark class="pa-8 ma-5 rounded-lg" width="250px" height="80px">
+          <v-btn dark class="pa-8 ma-5 rounded-lg" width="260px" height="80px">
             <v-row>
               <v-icon size="50">fab fa-google-play</v-icon>
               <v-col class="justify-start">

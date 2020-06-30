@@ -72,7 +72,7 @@
                   itemTitle="Rumah Aman"
                   itemCat="Hunian"
                   itemPrice="Rp. 150Rb / tahun"
-                  itemImg="../assets/item2.jpg"
+                  itemImg="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
                   :itemUserRating="104"
                   :itemRating="5"
                   :small="true"
@@ -93,12 +93,12 @@
 </template>
 
 <script>
-import CardItem from "../components/homepage/CardItem.vue";
-import Title from "../components/homepage/Title.vue";
-import UnduhApp from '@/components/homepage/UnduhApp.vue';
+import CardItem from "@/components/homepage/carditem";
+import Title from "@/components/homepage/title";
+import UnduhApp from "@/components/homepage/unduhapp";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import ExternalAds from "../components/ExternalAds.vue";
+import ExternalAds from "@/components/externalads";
 
 import "../stylesheet/home.css";
 
@@ -120,7 +120,8 @@ export default {
         title: "Kebaya Pengantin",
         cat: "Fashion",
         price: "Rp. 30Rb/hari",
-        img: "../assets/item2.jpg",
+        img:
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 3,
         userRating: 52
       },
@@ -129,7 +130,8 @@ export default {
         title: "Meja Pengantin",
         cat: "Benda",
         price: "Rp. 50Rb/jam",
-        img: "../assets/item2.jpg",
+        img:
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 5,
         userRating: 52
       },
@@ -138,7 +140,8 @@ export default {
         title: "Meja Pengantin",
         cat: "Benda",
         price: "Rp. 50Rb/jam",
-        img: "../assets/item2.jpg",
+        img:
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 5,
         userRating: 52
       },
@@ -147,7 +150,8 @@ export default {
         title: "Meja Pengantin",
         cat: "Benda",
         price: "Rp. 50Rb/jam",
-        img: "../assets/item2.jpg",
+        img:
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 0,
         userRating: 42
       }

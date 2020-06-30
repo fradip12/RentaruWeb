@@ -42,7 +42,7 @@
 
     <div class="center-item">
       <div class="text-lg-h5 white--text">Lihat Iklan</div>
-      <v-icon v-bind="size" dark>keyboard_arrow_down</v-icon>
+      <v-icon v-bind="size" dark>mdi-chevron-down</v-icon>
     </div>
   </v-container>
 </template>
