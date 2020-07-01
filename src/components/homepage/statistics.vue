@@ -5,6 +5,7 @@
     fluid
   >
     <v-row>
+      <v-col cols="1" />
       <v-col>
         <statistics-item
           iconName="fas fa-users"
@@ -31,6 +32,7 @@
           statsTitle="Transaksi Dilakukan"
         />
       </v-col>
+      <v-col cols="1" />
     </v-row>
   </v-container>
 </template>

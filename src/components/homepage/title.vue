@@ -32,7 +32,7 @@
           v-bind="size"
           rounded
           outlined
-          color="grey lighten-2"
+          color="white"
           >Pelajari Lebih Lanjut</v-btn
         >
       </v-col>

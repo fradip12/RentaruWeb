@@ -3,10 +3,10 @@
     class="container-relative d-flex justify-center "
     style="width: 300px;"
   >
-    <v-icon size="200" color="rgba(0,0,0,0.3)">{{ iconName }}</v-icon>
+    <v-icon size="250" color="rgba(0,0,0,0.3)">{{ iconName }}</v-icon>
     <div class="stats-center">
       <div class="white--text text-h2 ">{{ statsNumber }}</div>
-      <div class="white--text text-h5 mt-10 ">{{ statsTitle }}</div>
+      <div class="white--text text-h4 mt-10 ">{{ statsTitle }}</div>
     </div>
   </v-container>
 </template>

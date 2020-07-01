@@ -1,6 +1,11 @@
 <template>
-  <v-container fluid true-fill-height>
-    <div class="text-h3 text-center deep-orange--text text--darken-1">
+  <v-container
+    fluid
+    true-fill-height
+    style="background-color:#f5f5f5;"
+    class="pa-5"
+  >
+    <div class="text-h3 text-center deep-orange--text text--darken-1 mt-10">
       Temukan Kebutuhanmu
     </div>
     <div class="custom-divider" />
@@ -15,7 +20,7 @@
     >
       <Slide v-for="item in items" :key="item.key">
         <div class="box-cat">
-          <v-icon class="center-icon mt-5" size="150" dark>{{
+          <v-icon class="center-icon mt-10" size="150" dark>{{
             item.icon
           }}</v-icon>
           <div class="white--text text-center text-h5 mt-10">
