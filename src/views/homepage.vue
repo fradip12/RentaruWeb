@@ -80,7 +80,7 @@
               </div>
             </v-container>
 
-            <div class="d-flex justify-center">
+            <div class="d-flex justify-center my-10">
               <v-btn
                 class="align-self-center"
                 color="orange"
@@ -97,6 +97,7 @@
           <v-col cols="1"></v-col>
         </v-row>
       </v-container>
+      <cat-slider />
       <statistics />
       <unduh-app />
       <Footer />
@@ -112,6 +113,7 @@ import Statistics from "@/components/homepage/statistics";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import ExternalAds from "@/components/externalads";
+import CatSlider from "@/components/homepage/catslider";
 
 import "../stylesheet/home.css";
 
@@ -124,7 +126,8 @@ export default {
     ExternalAds,
     Title,
     UnduhApp,
-    Statistics
+    Statistics,
+    CatSlider
   },
 
   data: () => ({
