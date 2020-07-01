@@ -46,16 +46,16 @@
             </div>
 
             <v-container class="d-flex flex-lg-row flex-wrap justify-center">
-              <div v-for="item in items" v-bind:key="item.key">
-                <CardItem
-                  :itemTitle="item.title"
-                  :itemCat="item.cat"
-                  :itemPrice="item.price"
-                  :itemImg="item.img"
-                  :itemUserRating="item.userRating"
-                  :itemRating="item.rating"
-                ></CardItem>
-              </div>
+              <CardItem
+                v-for="item in items"
+                :key="item.key"
+                :itemTitle="item.title"
+                :itemCat="item.cat"
+                :itemPrice="item.price"
+                :itemImg="item.img"
+                :itemUserRating="item.userRating"
+                :itemRating="item.rating"
+              ></CardItem>
             </v-container>
 
             <!-- end of rekomendasi -->
@@ -67,32 +67,70 @@
               Mungkin Anda Minati
             </div>
             <v-container class="d-flex flex-lg-row flex-wrap justify-center">
-              <div v-for="n in 6" v-bind:key="n">
-                <CardItem
-                  itemTitle="Rumah Aman"
-                  itemCat="Hunian"
-                  itemPrice="Rp. 150Rb / tahun"
-                  itemImg="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
-                  :itemUserRating="104"
-                  :itemRating="5"
-                  :small="true"
-                ></CardItem>
-              </div>
+              <CardItem
+                v-for="n in 6"
+                :key="n"
+                itemTitle="Rumah Aman"
+                itemCat="Hunian"
+                itemPrice="Rp. 150Rb / tahun"
+                itemImg="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
+                :itemUserRating="104"
+                :itemRating="5"
+                :small="true"
+              ></CardItem>
             </v-container>
+
+            <!-- end of minati -->
 
             <div class="d-flex justify-center my-10">
               <v-btn
                 class="align-self-center"
-                color="orange"
+                color="deep-orange darken-1"
                 outlined
                 rounded
                 x-large
                 width="20vw"
+                v-on:click="isShowMore = true"
+                v-if="!isShowMore"
                 >Muat Lebih Banyak</v-btn
               >
             </div>
 
-            <!-- end of minati -->
+            <!-- see more -->
+            <div v-if="isShowMore">
+              <external-ads />
+
+              <v-container class="d-flex flex-lg-row flex-wrap justify-center">
+                <div v-for="n in 12" v-bind:key="n">
+                  <OfferBox v-if="n == 2" />
+
+                  <CardItem
+                    itemTitle="Mobil Cepat"
+                    itemCat="Transportasi"
+                    itemPrice="Rp. 150Rb / jam"
+                    itemImg="https://images.unsplash.com/photo-1554507650-4490355acbe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                    :itemUserRating="145"
+                    :itemRating="1"
+                    :xSmall="true"
+                    v-if="n != 2"
+                  ></CardItem>
+                </div>
+              </v-container>
+
+              <div class="d-flex justify-center my-10">
+                <v-btn
+                  class="align-self-center"
+                  color="deep-orange darken-1"
+                  outlined
+                  rounded
+                  x-large
+                  width="20vw"
+                  >Lihat Semua Iklan</v-btn
+                >
+              </div>
+            </div>
+
+            <!-- end of see more -->
           </v-col>
           <v-col cols="1"></v-col>
         </v-row>
@@ -114,6 +152,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import ExternalAds from "@/components/externalads";
 import CatSlider from "@/components/homepage/catslider";
+import OfferBox from "@/components/homepage/offerbox";
 
 import "../stylesheet/home.css";
 
@@ -127,7 +166,8 @@ export default {
     Title,
     UnduhApp,
     Statistics,
-    CatSlider
+    CatSlider,
+    OfferBox
   },
 
   data: () => ({
@@ -172,7 +212,8 @@ export default {
         rating: 0,
         userRating: 42
       }
-    ]
+    ],
+    isShowMore: false
   }),
 
   computed: {

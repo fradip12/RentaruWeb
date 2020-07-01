@@ -1,8 +1,8 @@
 <template>
   <v-card
     elevation="4"
-    :width="small ? '22vw' : '31vw'"
-    :height="small ? '15vw' : '20vw'"
+    :width="small ? '22vw' : xSmall ? '17vw' : '31vw'"
+    :height="small ? '15vw' : xSmall ? '11vw' : '20vw'"
     class="ma-sm-3 ma-lg-7 pa-0"
     rounded="lg"
   >
@@ -12,19 +12,21 @@
           :src="itemImg"
           :class="{
             'rounded-lg': true,
-            'box-img': !small,
-            'small-box-img': small
+            'box-img': !small && !xSmall,
+            'small-box-img': small,
+            'xsmall-box-img': xSmall
           }"
           alt="itemImg"
         />
 
-        <v-col>
+        <v-col :cols="xSmall ? '4' : ''">
           <v-container>
             <div
               :class="{
                 'text-sm-caption': true,
-                'text-lg-h5': !small,
-                'text-lg-body-1': small
+                'text-lg-h5': !small && !xSmall,
+                'text-lg-body-1': small,
+                'text-caption': xSmall
               }"
             >
               {{ itemTitle }}
@@ -35,8 +37,9 @@
             <div
               :class="{
                 'grey--text': true,
-                'text-lg-h6': !small,
-                'text-lg-body-2': small
+                'text-lg-h6': !small && !xSmall,
+                'text-lg-body-2': small,
+                'text-caption': xSmall
               }"
             >
               {{ itemCat }}
@@ -44,10 +47,12 @@
 
             <div
               :class="{
-                'mt-10': true,
+                'mt-10': !xSmall,
+                'mt-2': xSmall,
                 'orange--text': true,
-                'text-lg-h5': !small,
-                'text-lg-body-1': small
+                'text-lg-h5': !small && !xSmall,
+                'text-lg-body-1': small,
+                'text-caption': xSmall
               }"
             >
               {{ itemPrice }}
@@ -63,9 +68,15 @@
                 :value="itemRating"
                 background-color="black"
                 dense
-                :x-small="small"
+                :x-small="small || xSmall"
               ></v-rating>
-              <div :class="{ 'text-lg-h5': !small, 'text-lg-body-2': small }">
+              <div
+                :class="{
+                  'text-lg-h5': !small && !xSmall,
+                  'text-lg-body-2': small,
+                  'text-xcaption': xSmall
+                }"
+              >
                 ({{ itemUserRating }})
               </div>
             </v-row>
@@ -78,7 +89,12 @@
         color="primary"
         absolute
         :small="small"
-        :class="{ 'btn-fab': !small, 'small-btn-fab': small }"
+        :x-small="xSmall"
+        :class="{
+          'btn-fab': !small && !xSmall,
+          'small-btn-fab': small,
+          'xsmall-btn-fab': xSmall
+        }"
       >
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
@@ -102,7 +118,8 @@ export default {
     },
     itemUserRating: Number,
     itemLink: String,
-    small: Boolean
+    small: Boolean,
+    xSmall: Boolean
   }
 };
 </script>

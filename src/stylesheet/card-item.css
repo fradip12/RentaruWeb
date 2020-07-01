@@ -10,6 +10,12 @@
   object-fit: cover;
 }
 
+.xsmall-box-img {
+  width: 11vw;
+  height: 11vw;
+  object-fit: cover;
+}
+
 .btn-fab {
   right: -28px;
   bottom: 9vw;
@@ -18,4 +24,13 @@
 .small-btn-fab {
   right: -18px;
   bottom: 6vw;
+}
+
+.xsmall-btn-fab {
+  right: -16px;
+  bottom: 4.5vw;
+}
+
+.text-xcaption {
+  font-size: 0.6em;
 }
