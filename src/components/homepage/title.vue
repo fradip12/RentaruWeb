@@ -1,24 +1,25 @@
 <template>
   <v-container
-    class="fill-height true-fill-height container-relative"
-    style="background-color: #f4511e;"
+    class="fill-height true-fill-height main-bg container-relative pa-0"
     fluid
   >
     <v-row no-gutters>
-      <v-col cols="1"></v-col>
-      <v-col cols="6">
-        <div class="text-lg-h2 text-sm-h4 white--text">
+      <v-col v-if="width >= 960" cols="1"></v-col>
+      <v-col>
+        <div class="text-lg-h2 text-h3 white--text text-center text-md-left">
           Sewa Barang dan Jasa ?
         </div>
 
         <br />
 
-        <div class="mt-lg-5 text-lg-h3 text-sm-h5 white--text">
+        <div
+          class="mt-5 text-lg-h3 text-h3 white--text text-center text-md-left"
+        >
           Rentaru saja!
         </div>
 
         <v-btn
-          class="mt-lg-16 mt-sm-5 primary--text"
+          class="mt-lg-16 mt-sm-5 primary--text align-self-center"
           v-bind="size"
           rounded
           color="white"
@@ -37,7 +38,9 @@
         >
       </v-col>
 
-      <v-col cols="5"></v-col>
+      <v-col v-if="width >= 960" cols="5">
+        <img src="../../assets/man.png" class="man-img" />
+      </v-col>
     </v-row>
 
     <div class="center-item">
@@ -52,6 +55,10 @@ export default {
   name: "Title",
 
   computed: {
+    width() {
+      console.log(screen.width + "px");
+      return screen.width;
+    },
     size() {
       const size = { xs: "x-small", sm: "small", lg: "large", xl: "x-large" }[
         this.$vuetify.breakpoint.name
