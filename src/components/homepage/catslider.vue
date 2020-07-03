@@ -5,7 +5,7 @@
     style="background-color:#f5f5f5;"
     class="pa-5"
   >
-    <div class="text-h3 text-center deep-orange--text text--darken-1 mt-10">
+    <div class="text-h3 text-center secondary--text  mt-10">
       Temukan Kebutuhanmu
     </div>
     <div class="custom-divider" />
@@ -14,8 +14,8 @@
       :autoplay="true"
       :perPage="4"
       :scrollPerPage="false"
-      paginationActiveColor="orangered"
-      paginationColor="orange"
+      paginationActiveColor="#ce3800"
+      paginationColor="#ff7543"
       class="separator-margin"
     >
       <Slide v-for="item in items" :key="item.key">

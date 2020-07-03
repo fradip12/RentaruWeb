@@ -1,5 +1,5 @@
 .custom-divider {
-  background-color: orangered;
+  background-color: #ce3800;
   width: 10vw;
   height: 4px;
   margin-left: auto;
@@ -8,7 +8,7 @@
 }
 
 .box-cat {
-  background-color: orangered;
+  background-color: #ee4000;
   width: 90%;
   height: 15vw;
   margin-left: auto;
