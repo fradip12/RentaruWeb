@@ -19,8 +19,9 @@
         </div>
 
         <v-btn
-          class="mt-lg-16 mt-sm-5 primary--text align-self-center"
-          v-bind="size"
+          class="mt-lg-16 mt-10 primary--text align-self-center"
+          x-large
+          :block="width <= 960 ? true : false"
           rounded
           color="white"
           >Jelajahi Kategori</v-btn
@@ -30,7 +31,8 @@
 
         <v-btn
           class="mt-lg-16 mt-sm-5 white--text"
-          v-bind="size"
+          x-large
+          :block="width <= 960 ? true : false"
           rounded
           outlined
           color="white"
@@ -56,7 +58,6 @@ export default {
 
   computed: {
     width() {
-      console.log(screen.width + "px");
       return screen.width;
     },
     size() {
