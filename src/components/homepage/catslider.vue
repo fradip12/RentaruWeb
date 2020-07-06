@@ -1,18 +1,15 @@
 <template>
-  <v-container
-    fluid
-    true-fill-height
-    style="background-color:#f5f5f5;"
-    class="pa-5"
-  >
-    <div class="text-h3 text-center secondary--text  mt-10">
+  <v-container fluid style="background-color:#f5f5f5;" class="pa-5">
+    <div
+      class="text-md-h3 text-sm-h4 text-h5 text-center secondary--text mt-sm-10 mt-5"
+    >
       Temukan Kebutuhanmu
     </div>
     <div class="custom-divider" />
 
     <Carousel
       :autoplay="true"
-      :perPage="4"
+      :perPage="width <= 600 ? 2 : width <= 960 ? 3 : 4"
       :scrollPerPage="false"
       paginationActiveColor="#ce3800"
       paginationColor="#ff7543"
@@ -20,10 +17,13 @@
     >
       <Slide v-for="item in items" :key="item.key">
         <div class="box-cat">
-          <v-icon class="center-icon mt-10" size="150" dark>{{
-            item.icon
-          }}</v-icon>
-          <div class="white--text text-center text-h5 mt-10">
+          <v-icon
+            class="center-icon mt-sm-10 mt-5"
+            :size="width <= 960 ? 80 : 150"
+            dark
+            >{{ item.icon }}</v-icon
+          >
+          <div class="white--text text-center text-sm-h5 text-h6 mt-sm-10">
             {{ item.text }}
           </div>
         </div>
@@ -49,6 +49,13 @@ export default {
     Carousel,
     Slide
   },
+
+  computed: {
+    width() {
+      return screen.width;
+    }
+  },
+
   data: function() {
     return {
       items: [

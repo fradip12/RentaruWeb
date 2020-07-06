@@ -10,7 +10,7 @@
 .box-cat {
   background-color: #ee4000;
   width: 90%;
-  height: 15vw;
+  height: 30vh;
   margin-left: auto;
   margin-right: auto;
   align-content: center;
@@ -26,4 +26,19 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (max-width: 1366px) {
+  .box-cat {
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .box-cat {
+    height: 20vh;
+  }
+  .custom-divider {
+    margin-top: 10px;
+  }
 }
