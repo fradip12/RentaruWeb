@@ -1,5 +1,5 @@
 <template>
-  <v-skeleton-loader height="5vw" width="100%" type="image" />
+  <v-skeleton-loader height="100px" width="100%" type="image" />
 </template>
 
 <script>
