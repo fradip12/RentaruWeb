@@ -34,3 +34,25 @@
 .text-xcaption {
   font-size: 0.6em;
 }
+
+@media screen and (max-width: 960px) {
+  .box-img {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  .btn-fab {
+    bottom: 17vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .box-img {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .btn-fab {
+    bottom: 18vw;
+  }
+}

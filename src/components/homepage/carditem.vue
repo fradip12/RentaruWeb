@@ -1,9 +1,9 @@
 <template>
   <v-card
     elevation="4"
-    :width="small ? '22vw' : xSmall ? '17vw' : '31vw'"
-    :height="small ? '15vw' : xSmall ? '11vw' : '20vw'"
-    class="ma-sm-3 ma-lg-7 pa-0"
+    :width="small ? '22vw' : xSmall ? '17vw' : normalSizeCard.width"
+    :height="small ? '15vw' : xSmall ? '11vw' : normalSizeCard.height"
+    class="ma-lg-7 mb-5 mb-lg-7 pa-0"
     rounded="lg"
   >
     <v-container class="pa-0" style="position:relative;">
@@ -23,8 +23,7 @@
           <v-container>
             <div
               :class="{
-                'text-sm-caption': true,
-                'text-lg-h5': !small && !xSmall,
+                'text-sm-h5': !small && !xSmall,
                 'text-lg-body-1': small,
                 'text-caption': xSmall
               }"
@@ -38,6 +37,7 @@
               :class="{
                 'grey--text': true,
                 'text-lg-h6': !small && !xSmall,
+                'text-sm-h6': !small && !xSmall,
                 'text-lg-body-2': small,
                 'text-caption': xSmall
               }"
@@ -47,10 +47,11 @@
 
             <div
               :class="{
-                'mt-10': !xSmall,
+                'mt-sm-8': !xSmall,
+                'mt-md-0': !xSmall,
                 'mt-2': xSmall,
-                'orange--text': true,
-                'text-lg-h5': !small && !xSmall,
+                'secondary--text': true,
+                'text-sm-h6': !small && !xSmall,
                 'text-lg-body-1': small,
                 'text-caption': xSmall
               }"
@@ -61,16 +62,21 @@
             <v-row
               no-gutters
               style="position:absolute;bottom:10px;width:40%"
-              class="align-center"
+              :class="{
+                'flex-column': width <= 960,
+                'align-center': width >= 960
+              }"
             >
               <v-rating
                 color="black"
                 :value="itemRating"
                 background-color="black"
                 dense
+                :small="width <= 600"
                 :x-small="small || xSmall"
               ></v-rating>
               <div
+                v-if="width >= 600"
                 :class="{
                   'text-lg-h5': !small && !xSmall,
                   'text-lg-body-2': small,
@@ -107,6 +113,27 @@ import "../../stylesheet/card-item.css";
 
 export default {
   name: "CardItem",
+
+  computed: {
+    width() {
+      return screen.width;
+    },
+
+    normalSizeCard() {
+      let width = screen.width;
+
+      if (width <= 600) {
+        return { width: "80vw", height: "50vw" };
+      }
+
+      if (width <= 960) {
+        return { width: "60vw", height: "40vw" };
+      }
+
+      return { width: "31vw", height: "20vw" };
+    }
+  },
+
   props: {
     itemTitle: String,
     itemImg: String,

@@ -45,7 +45,7 @@
               Rekomendasi untuk Anda
             </div>
 
-            <v-container class="d-flex flex-lg-row flex-wrap justify-center">
+            <v-container class="pa-0 d-flex flex-row flex-wrap justify-center">
               <CardItem
                 v-for="item in items"
                 :key="item.key"
