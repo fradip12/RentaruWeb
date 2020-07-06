@@ -41,6 +41,11 @@
     height: 40vw;
   }
 
+  .small-box-img {
+    width: 23vw;
+    height: 23vw;
+  }
+
   .btn-fab {
     bottom: 17vw;
   }
@@ -52,7 +57,16 @@
     height: 50vw;
   }
 
+  .small-box-img {
+    width: 35vw;
+    height: 35vw;
+  }
+
   .btn-fab {
     bottom: 18vw;
+  }
+
+  .small-btn-fab {
+    bottom: 12vw;
   }
 }

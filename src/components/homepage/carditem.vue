@@ -1,9 +1,13 @@
 <template>
   <v-card
     elevation="4"
-    :width="small ? '22vw' : xSmall ? '17vw' : normalSizeCard.width"
-    :height="small ? '15vw' : xSmall ? '11vw' : normalSizeCard.height"
-    class="ma-lg-7 mb-5 mb-lg-7 pa-0"
+    :width="
+      small ? smallSizeCard.width : xSmall ? '17vw' : normalSizeCard.width
+    "
+    :height="
+      small ? smallSizeCard.height : xSmall ? '11vw' : normalSizeCard.height
+    "
+    class="ma-lg-7 ma-sm-3 mb-5 mb-lg-7 pa-0"
     rounded="lg"
   >
     <v-container class="pa-0" style="position:relative;">
@@ -25,13 +29,13 @@
               :class="{
                 'text-sm-h5': !small && !xSmall,
                 'text-lg-body-1': small,
-                'text-caption': xSmall
+                'text-caption': xSmall || small
               }"
             >
               {{ itemTitle }}
             </div>
 
-            <v-divider class="my-lg-4 my-3"></v-divider>
+            <v-divider class="my-lg-4 my-1 my-sm-3"></v-divider>
 
             <div
               :class="{
@@ -39,7 +43,7 @@
                 'text-lg-h6': !small && !xSmall,
                 'text-sm-h6': !small && !xSmall,
                 'text-lg-body-2': small,
-                'text-caption': xSmall
+                'text-caption': xSmall || small
               }"
             >
               {{ itemCat }}
@@ -53,7 +57,7 @@
                 'secondary--text': true,
                 'text-sm-h6': !small && !xSmall,
                 'text-lg-body-1': small,
-                'text-caption': xSmall
+                'text-caption': xSmall || small
               }"
             >
               {{ itemPrice }}
@@ -76,8 +80,10 @@
                 :x-small="small || xSmall"
               ></v-rating>
               <div
-                v-if="width >= 600"
+                v-if="!small || width >= 600"
                 :class="{
+                  'text-caption': !small && !xSmall,
+                  'text-sm-body-1': !small && !xSmall,
                   'text-lg-h5': !small && !xSmall,
                   'text-lg-body-2': small,
                   'text-xcaption': xSmall
@@ -131,6 +137,20 @@ export default {
       }
 
       return { width: "31vw", height: "20vw" };
+    },
+
+    smallSizeCard() {
+      let width = screen.width;
+
+      if (width <= 600) {
+        return { width: "60vw", height: "35vw" };
+      }
+
+      if (width <= 960) {
+        return { width: "34vw", height: "23vw" };
+      }
+
+      return { width: "22vw", height: "15vw" };
     }
   },
 
