@@ -2,12 +2,20 @@
   <v-card
     elevation="4"
     :width="
-      small ? smallSizeCard.width : xSmall ? '17vw' : normalSizeCard.width
+      small
+        ? smallSizeCard.width
+        : xSmall
+        ? xsmallSizeCard.width
+        : normalSizeCard.width
     "
     :height="
-      small ? smallSizeCard.height : xSmall ? '11vw' : normalSizeCard.height
+      small
+        ? smallSizeCard.height
+        : xSmall
+        ? xsmallSizeCard.height
+        : normalSizeCard.height
     "
-    class="ma-lg-7 ma-sm-3 mb-5 mb-lg-7 pa-0"
+    class="ma-lg-7 ma-sm-3 ma-2 mb-5 mb-lg-7 pa-0"
     rounded="lg"
   >
     <v-container class="pa-0" style="position:relative;">
@@ -23,25 +31,25 @@
           alt="itemImg"
         />
 
-        <v-col :cols="xSmall ? '4' : ''">
+        <v-col>
           <v-container>
             <div
               :class="{
-                'text-sm-h5': !small && !xSmall,
+                'text-lg-h5': !small && !xSmall,
                 'text-lg-body-1': small,
-                'text-caption': xSmall || small
+                'text-caption': xSmall || small,
+                'text-xsmall': xSmall
               }"
             >
               {{ itemTitle }}
             </div>
 
-            <v-divider class="my-lg-2 my-1 my-sm-2"></v-divider>
+            <v-divider class="my-lg-2"></v-divider>
 
             <div
               :class="{
                 'grey--text': true,
                 'text-lg-h6': !small && !xSmall,
-                'text-sm-h6': !small && !xSmall,
                 'text-lg-body-2': small,
                 'text-caption': xSmall || small
               }"
@@ -53,9 +61,8 @@
               :class="{
                 'mt-sm-8': !xSmall && !small,
                 'mt-md-0': !xSmall,
-                'mt-2': xSmall,
                 'secondary--text': true,
-                'text-sm-h6': !small && !xSmall,
+                'text-lg-h6': !small && !xSmall,
                 'text-lg-body-1': small,
                 'text-caption': xSmall || small
               }"
@@ -65,10 +72,11 @@
 
             <v-row
               no-gutters
-              style="position:absolute;bottom:10px;"
               :class="{
-                'flex-column': width <= 960,
-                'align-center': width >= 960
+                'bottom-rating': true,
+                'right-rating': xSmall,
+                'flex-column': width <= 960 && !xSmall,
+                'align-center': width >= 960 || xSmall
               }"
             >
               <v-rating
@@ -76,7 +84,7 @@
                 :value="itemRating"
                 background-color="black"
                 dense
-                :small="width <= 600 && !small && !xSmall"
+                :small="width < 1264 && !small"
                 :x-small="small || xSmall"
               ></v-rating>
               <div
@@ -129,10 +137,10 @@ export default {
       let width = screen.width;
 
       if (width <= 600) {
-        return { width: "80vw", height: "50vw" };
+        return { width: "80vw", height: "45vw" };
       }
 
-      if (width <= 960) {
+      if (width < 960) {
         return { width: "60vw", height: "40vw" };
       }
 
@@ -146,11 +154,33 @@ export default {
         return { width: "60vw", height: "35vw" };
       }
 
-      if (width <= 960) {
-        return { width: "34vw", height: "20vw" };
+      if (width < 960) {
+        return { width: "35vw", height: "20vw" };
+      }
+
+      if (width < 1264) {
+        return { width: "24vw", height: "15vw" };
       }
 
       return { width: "22vw", height: "15vw" };
+    },
+
+    xsmallSizeCard() {
+      let width = screen.width;
+
+      if (width <= 600) {
+        return { width: "82vw", height: "20vw" };
+      }
+
+      if (width <= 960) {
+        return { width: "35vw", height: "14vw" };
+      }
+
+      if (width <= 1366) {
+        return { width: "22vw", height: "11vw" };
+      }
+
+      return { width: "17vw", height: "11vw" };
     }
   },
 

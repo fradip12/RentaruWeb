@@ -35,6 +35,13 @@
   font-size: 0.6em;
 }
 
+@media screen and (min-width: 600px) {
+  .bottom-rating {
+    position: absolute;
+    bottom: 5px;
+  }
+}
+
 @media screen and (max-width: 960px) {
   .box-img {
     width: 40vw;
@@ -44,6 +51,11 @@
   .small-box-img {
     width: 20vw;
     height: 20vw;
+  }
+
+  .xsmall-box-img {
+    width: 14vw;
+    height: 14vw;
   }
 
   .btn-fab {
@@ -57,13 +69,18 @@
 
 @media screen and (max-width: 600px) {
   .box-img {
-    width: 50vw;
-    height: 50vw;
+    width: 45vw;
+    height: 45vw;
   }
 
   .small-box-img {
     width: 35vw;
     height: 35vw;
+  }
+
+  .xsmall-box-img {
+    width: 20vw;
+    height: 20vw;
   }
 
   .btn-fab {
@@ -72,5 +89,15 @@
 
   .small-btn-fab {
     bottom: 12vw;
+  }
+
+  .xsmall-btn-fab {
+    bottom: 8vw;
+  }
+
+  .right-rating {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
   }
 }

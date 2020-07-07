@@ -101,7 +101,7 @@
 
               <v-container class="d-flex flex-lg-row flex-wrap justify-center">
                 <div v-for="n in 12" v-bind:key="n">
-                  <OfferBox v-if="n == 2" />
+                  <!-- <OfferBox v-if="n == 2" /> -->
 
                   <CardItem
                     itemTitle="Mobil Cepat"
@@ -123,7 +123,6 @@
                   outlined
                   rounded
                   x-large
-                  width="20vw"
                   >Lihat Semua Iklan</v-btn
                 >
               </div>
@@ -151,7 +150,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import ExternalAds from "@/components/externalads";
 import CatSlider from "@/components/homepage/catslider";
-import OfferBox from "@/components/homepage/offerbox";
+// import OfferBox from "@/components/homepage/offerbox";
 
 import "../stylesheet/home.css";
 
@@ -165,8 +164,8 @@ export default {
     Title,
     UnduhApp,
     Statistics,
-    CatSlider,
-    OfferBox
+    CatSlider
+    // OfferBox
   },
 
   data: () => ({
@@ -212,7 +211,7 @@ export default {
         userRating: 42
       }
     ],
-    isShowMore: false
+    isShowMore: true
   }),
 
   computed: {
