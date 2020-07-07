@@ -35,7 +35,7 @@
               {{ itemTitle }}
             </div>
 
-            <v-divider class="my-lg-4 my-1 my-sm-2"></v-divider>
+            <v-divider class="my-lg-2 my-1 my-sm-2"></v-divider>
 
             <div
               :class="{
@@ -57,7 +57,6 @@
                 'secondary--text': true,
                 'text-sm-h6': !small && !xSmall,
                 'text-lg-body-1': small,
-                'text-sm-caption': small,
                 'text-caption': xSmall || small
               }"
             >
@@ -66,7 +65,7 @@
 
             <v-row
               no-gutters
-              style="position:absolute;bottom:10px;width:40%"
+              style="position:absolute;bottom:10px;"
               :class="{
                 'flex-column': width <= 960,
                 'align-center': width >= 960
@@ -81,7 +80,7 @@
                 :x-small="small || xSmall"
               ></v-rating>
               <div
-                v-if="!small || width >= 960"
+                v-if="!small || width >= 1367"
                 :class="{
                   'text-caption': !xSmall,
                   'text-sm-body-1': !small && !xSmall,

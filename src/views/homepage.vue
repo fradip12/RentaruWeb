@@ -89,7 +89,6 @@
                 outlined
                 rounded
                 x-large
-                width="20vw"
                 v-on:click="isShowMore = true"
                 v-if="!isShowMore"
                 >Muat Lebih Banyak</v-btn
