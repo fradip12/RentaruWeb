@@ -15,7 +15,7 @@
         ? xsmallSizeCard.height
         : normalSizeCard.height
     "
-    class="ma-lg-7 ma-sm-3 ma-2 mb-5 mb-lg-7 pa-0"
+    class="ma-lg-7 ma-sm-3 ma-2 pa-0"
     rounded="lg"
   >
     <v-container class="pa-0" style="position:relative;">
@@ -88,7 +88,7 @@
                 :x-small="small || xSmall"
               ></v-rating>
               <div
-                v-if="!small || width >= 1367"
+                v-if="(!small && !xSmall) || width >= 1367"
                 :class="{
                   'text-caption': !xSmall,
                   'text-sm-body-1': !small && !xSmall,
@@ -137,7 +137,7 @@ export default {
       let width = screen.width;
 
       if (width <= 600) {
-        return { width: "80vw", height: "45vw" };
+        return { width: "80vw", height: "40vw" };
       }
 
       if (width < 960) {

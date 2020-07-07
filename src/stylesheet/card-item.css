@@ -69,8 +69,8 @@
 
 @media screen and (max-width: 600px) {
   .box-img {
-    width: 45vw;
-    height: 45vw;
+    width: 40vw;
+    height: 40vw;
   }
 
   .small-box-img {
@@ -84,7 +84,7 @@
   }
 
   .btn-fab {
-    bottom: 18vw;
+    bottom: 13vw;
   }
 
   .small-btn-fab {
