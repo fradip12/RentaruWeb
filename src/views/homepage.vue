@@ -211,7 +211,7 @@ export default {
         userRating: 42
       }
     ],
-    isShowMore: true
+    isShowMore: false
   }),
 
   computed: {
