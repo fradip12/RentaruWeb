@@ -42,12 +42,16 @@
   }
 
   .small-box-img {
-    width: 23vw;
-    height: 23vw;
+    width: 20vw;
+    height: 20vw;
   }
 
   .btn-fab {
     bottom: 17vw;
+  }
+
+  .small-btn-fab {
+    bottom: 7vw;
   }
 }
 

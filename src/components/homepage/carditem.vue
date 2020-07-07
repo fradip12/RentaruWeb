@@ -35,7 +35,7 @@
               {{ itemTitle }}
             </div>
 
-            <v-divider class="my-lg-4 my-1 my-sm-3"></v-divider>
+            <v-divider class="my-lg-4 my-1 my-sm-2"></v-divider>
 
             <div
               :class="{
@@ -51,12 +51,13 @@
 
             <div
               :class="{
-                'mt-sm-8': !xSmall,
+                'mt-sm-8': !xSmall && !small,
                 'mt-md-0': !xSmall,
                 'mt-2': xSmall,
                 'secondary--text': true,
                 'text-sm-h6': !small && !xSmall,
                 'text-lg-body-1': small,
+                'text-sm-caption': small,
                 'text-caption': xSmall || small
               }"
             >
@@ -76,13 +77,13 @@
                 :value="itemRating"
                 background-color="black"
                 dense
-                :small="width <= 600"
+                :small="width <= 600 && !small && !xSmall"
                 :x-small="small || xSmall"
               ></v-rating>
               <div
-                v-if="!small || width >= 600"
+                v-if="!small || width >= 960"
                 :class="{
-                  'text-caption': !small && !xSmall,
+                  'text-caption': !xSmall,
                   'text-sm-body-1': !small && !xSmall,
                   'text-lg-h5': !small && !xSmall,
                   'text-lg-body-2': small,
@@ -147,7 +148,7 @@ export default {
       }
 
       if (width <= 960) {
-        return { width: "34vw", height: "23vw" };
+        return { width: "34vw", height: "20vw" };
       }
 
       return { width: "22vw", height: "15vw" };
