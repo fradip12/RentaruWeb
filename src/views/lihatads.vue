@@ -4,14 +4,14 @@
       <Header />
 
       <v-container fluid>
-        <v-row no-gutters>
-          <v-col cols="1" />
+        <v-row no-gutters class="justify-center justify-md-center">
+          <v-col cols="1" v-if="width >= 960" />
           <img
             src="../assets/item2.jpg"
             class="rounded-lg main-img ma-5"
             alt="gambar iklan"
           />
-          <v-col class="ma-5 overflow-y-auto" style="height: 40vw">
+          <v-col class="ma-5 overflow-y-auto max-height">
             <!-- share and cart btn -->
             <div class="d-flex flex-row-reverse">
               <v-icon class="mx-5" color="primary">fas fa-shopping-cart</v-icon>
@@ -68,26 +68,29 @@
             </div>
 
             <!-- report -->
-            <v-container>
-              <v-row>
+            <v-container class="mt-8 mt-sm-0">
+              <v-row
+                class="justify-center justify-sm-space-between justify-md-center justify-lg-space-between"
+              >
                 <div class="text-h6 quarter--text">ID Iklan: 123456</div>
-                <v-spacer />
                 <v-btn color="primary" class="mx-2 white--text" depressed
                   >Laporkan iklan ini
                 </v-btn>
               </v-row>
             </v-container>
           </v-col>
-          <v-col cols="1" />
+          <v-col cols="1" v-if="width >= 960" />
         </v-row>
       </v-container>
 
       <!-- Iklan lain yang mirip -->
       <v-container fluid>
         <v-row no-gutters>
-          <v-col cols="1" />
+          <v-col cols="1" v-if="width >= 960" />
           <v-col>
-            <div class="text-h4 my-7">Iklan Lain yang Terkait</div>
+            <div class="text-h4 my-7 text-center text-sm-left">
+              Iklan Lain yang Terkait
+            </div>
             <v-container>
               <v-row class="justify-center">
                 <CardItem
@@ -104,7 +107,7 @@
               </v-row>
             </v-container>
           </v-col>
-          <v-col cols="1" />
+          <v-col cols="1" v-if="width >= 960" />
         </v-row>
       </v-container>
 
@@ -118,6 +121,21 @@
   width: 40vw;
   height: 40vw;
   object-fit: cover;
+}
+
+.max-height {
+  height: 40vw;
+}
+
+@media screen and (max-width: 960px) {
+  .main-img {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .max-height {
+    height: auto;
+  }
 }
 </style>
 
@@ -134,6 +152,12 @@ export default {
     UserProfile,
     CardItem,
     Footer
+  },
+
+  computed: {
+    width() {
+      return screen.width;
+    }
   }
 };
 </script>
