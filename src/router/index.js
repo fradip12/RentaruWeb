@@ -24,6 +24,11 @@ const routes = [
     name: 'Under Construct',
     component: () => import('@/views/underconstruct'),
   },
+  {
+    path: '/lihatads',
+    name: 'Lihat Ads',
+    component: () => import('@/views/lihatads'),
+  },
 ];
 
 const router = new VueRouter({

@@ -12,6 +12,7 @@ export default new Vuetify({
         primary: '#ee4000',
         secondary: '#ce3800',
         tersier: '#f5f5f5',
+        quarter: '#ff7543',
         accent: '#ffffff',
       },
     },
