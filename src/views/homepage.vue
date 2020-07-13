@@ -142,7 +142,7 @@
 </template>
 
 <script>
-import CardItem from "@/components/homepage/carditem";
+import CardItem from "@/components/carditem";
 import Title from "@/components/homepage/title";
 import UnduhApp from "@/components/homepage/unduhapp";
 import Statistics from "@/components/homepage/statistics";

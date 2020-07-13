@@ -55,6 +55,54 @@
             <div class="text-h6 font-weight-bold my-2">
               Lokasi: <span class="font-weight-medium">DKI Jakarta</span>
             </div>
+            <img
+              src="../assets/map.png"
+              width="100%"
+              height="300vh"
+              style="object-fit: cover;"
+            />
+
+            <!-- ulasan -->
+            <div class="d-flex justify-center my-4">
+              <v-btn color="quarter" outlined>Lihat Ulasan Penyewa</v-btn>
+            </div>
+
+            <!-- report -->
+            <v-container>
+              <v-row>
+                <div class="text-h6 quarter--text">ID Iklan: 123456</div>
+                <v-spacer />
+                <v-btn color="primary" class="mx-2 white--text" depressed
+                  >Laporkan iklan ini
+                </v-btn>
+              </v-row>
+            </v-container>
+          </v-col>
+          <v-col cols="1" />
+        </v-row>
+      </v-container>
+
+      <!-- Iklan lain yang mirip -->
+      <v-container fluid>
+        <v-row no-gutters>
+          <v-col cols="1" />
+          <v-col>
+            <div class="text-h4 my-7">Iklan Lain yang Terkait</div>
+            <v-container>
+              <v-row class="justify-center">
+                <CardItem
+                  v-for="n in 3"
+                  :key="n"
+                  itemTitle="Rumah Aman"
+                  itemCat="Hunian"
+                  itemPrice="Rp. 150Rb / tahun"
+                  itemImg="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
+                  :itemUserRating="104"
+                  :itemRating="5"
+                  :small="true"
+                />
+              </v-row>
+            </v-container>
           </v-col>
           <v-col cols="1" />
         </v-row>
@@ -77,12 +125,14 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import UserProfile from "@/components/lihatads/userprofile";
+import CardItem from "@/components/carditem";
 
 export default {
   name: "LihatAd",
   components: {
     Header,
     UserProfile,
+    CardItem,
     Footer
   }
 };

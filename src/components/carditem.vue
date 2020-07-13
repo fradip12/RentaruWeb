@@ -123,7 +123,7 @@
 </template>
 
 <script>
-import "../../stylesheet/card-item.css";
+import "../stylesheet/card-item.css";
 
 export default {
   name: "CardItem",
