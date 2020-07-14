@@ -21,8 +21,16 @@
         </div>
         <v-container>
           <v-row class="justify-center justify-sm-start">
-            <unduhBtn iconName="fab fa-apple" marketText="App Store" />
-            <unduhBtn iconName="fab fa-google-play" marketText="Google Play" />
+            <unduhBtn
+              class="ma-sm-1"
+              iconName="fab fa-apple"
+              marketText="App Store"
+            />
+            <unduhBtn
+              class="ma-sm-1"
+              iconName="fab fa-google-play"
+              marketText="Google Play"
+            />
           </v-row>
         </v-container>
       </v-col>

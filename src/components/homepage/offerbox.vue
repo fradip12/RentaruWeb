@@ -36,7 +36,7 @@
 
 @media screen and (max-width: 600px) {
   .container-size {
-    height: 20vw;
+    height: 20vh;
     width: 82vw;
   }
 }
