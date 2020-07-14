@@ -1,36 +1,38 @@
 <template>
   <div class="primary">
     <v-container class="accent--text">
-      <v-row>
-        <v-col cols="6">
+      <v-row class="flex-column flex-sm-row">
+        <v-col>
           <h2 style="display: inline;">RENTARU</h2>
           <h4 style="display: inline;">&#169;2020</h4>
-          <v-row>
-            <v-col cols="6">
-              <Hyperlink
-                :text="links[0].text"
-                :href="links[0].href"
-              ></Hyperlink>
-              <br />
-              <Hyperlink
-                :text="links[1].text"
-                :href="links[1].href"
-              ></Hyperlink>
-            </v-col>
-            <v-col cols="6">
-              <Hyperlink
-                :text="links[2].text"
-                :href="links[2].href"
-              ></Hyperlink>
-              <br />
-              <Hyperlink
-                :text="links[3].text"
-                :href="links[3].href"
-              ></Hyperlink>
-            </v-col>
-          </v-row>
+          <v-container>
+            <v-row>
+              <v-col cols="6">
+                <Hyperlink
+                  :text="links[0].text"
+                  :href="links[0].href"
+                ></Hyperlink>
+                <br />
+                <Hyperlink
+                  :text="links[1].text"
+                  :href="links[1].href"
+                ></Hyperlink>
+              </v-col>
+              <v-col cols="6">
+                <Hyperlink
+                  :text="links[2].text"
+                  :href="links[2].href"
+                ></Hyperlink>
+                <br />
+                <Hyperlink
+                  :text="links[3].text"
+                  :href="links[3].href"
+                ></Hyperlink>
+              </v-col>
+            </v-row>
+          </v-container>
         </v-col>
-        <v-col offset="2" cols="4">
+        <v-col>
           <h2 class="mb-4">Ikuti Kami:</h2>
           <IconButton
             v-for="item in mediaIcons"
@@ -97,6 +99,12 @@ export default {
         href: "/"
       }
     ]
-  })
+  }),
+
+  computed: {
+    width() {
+      return screen.width;
+    }
+  }
 };
 </script>

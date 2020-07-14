@@ -137,7 +137,7 @@ export default {
       let width = screen.width;
 
       if (width <= 600) {
-        return { width: "80vw", height: "40vw" };
+        return { width: "80vw", height: "30vh" };
       }
 
       if (width < 960) {
