@@ -1,61 +1,72 @@
 <template>
   <div class="primary">
     <v-container>
-      <v-row align="center" dense>
+      <v-row align="center" align-content="stretch" dense>
         <h1 class="tersier--text">RENTARU</h1>
         <div class="pl-2 pr-2"></div>
         <SearchBar></SearchBar>
         <div class="pl-2 pr-2"></div>
-        <IconButton v-for="item in iconButtons" :key="item.icon"
-          :icon="item.icon" :value="item.value" :href="item.href">
-        </IconButton>
-        <div class="pl-2 pr-2"></div>
-        <Button v-for="item in buttons" :key="item.text"
-          :text="item.text" :href="item.href">
-        </Button>
+        <div class="d-flex flex-row mt-2">
+          <IconButton
+            v-for="item in iconButtons"
+            :key="item.icon"
+            :icon="item.icon"
+            :value="item.value"
+            :href="item.href"
+          >
+          </IconButton>
+          <div class="pl-2 pr-2"></div>
+          <Button
+            v-for="item in buttons"
+            :key="item.text"
+            :text="item.text"
+            :href="item.href"
+          >
+          </Button>
+        </div>
       </v-row>
     </v-container>
   </div>
 </template>
 
 <script>
-import Button from './button';
-import IconButton from './icon-button';
-import SearchBar from './search-bar';
+import Button from "./button";
+import IconButton from "./icon-button";
+import SearchBar from "./search-bar";
 
 export default {
-  name: 'HeaderMain',
+  name: "HeaderMain",
   components: {
     Button,
     IconButton,
-    SearchBar,
+    SearchBar
   },
   data: () => ({
     iconButtons: [
       {
-        icon: 'mdi-cart',
+        icon: "mdi-cart",
         value: 5,
-        href: '/',
+        href: "/"
       },
       {
-        icon: 'mdi-message-text',
-        href: '/',
+        icon: "mdi-message-text",
+        href: "/"
       },
       {
-        icon: 'mdi-bell',
-        href: '/',
+        icon: "mdi-bell",
+        href: "/"
       },
       {
-        icon: 'mdi-account',
-        href: '/',
-      },
+        icon: "mdi-account",
+        href: "/"
+      }
     ],
     buttons: [
       {
-        text: 'Pasang Iklan',
-        href: '/',
+        text: "Pasang Iklan",
+        href: "/"
       }
     ]
-  }),
+  })
 };
 </script>
