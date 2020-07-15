@@ -9,25 +9,35 @@ const routes = [
     name: 'Home',
     component: () => import('@/views/homepage'),
   },
+
   {
     path: '/profile',
     name: 'Profile',
     component: () => import('@/views/profile'),
   },
+
   {
     path: '/error404',
     name: 'Error 404',
     component: () => import('@/views/unknown404'),
   },
+
   {
     path: '/underconstruct',
     name: 'Under Construct',
     component: () => import('@/views/underconstruct'),
   },
+
   {
     path: '/lihatads',
     name: 'Lihat Ads',
     component: () => import('@/views/lihatads'),
+  },
+
+  {
+    path: '/wishlist',
+    name: 'Wishlist',
+    component: () => import('@/views/wishlist'),
   },
 ];
 
