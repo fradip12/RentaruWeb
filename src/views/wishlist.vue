@@ -19,6 +19,7 @@
             :itemUserRating="104"
             :itemRating="5"
             small
+            isDelete
           />
         </div>
       </v-container>

@@ -103,7 +103,10 @@
           </v-container>
         </v-col>
       </v-row>
+
+      <!-- search button -->
       <v-btn
+        v-if="!isDelete"
         elevation="4"
         fab
         color="primary"
@@ -117,6 +120,19 @@
         }"
       >
         <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+
+      <!-- delete button -->
+      <v-btn
+        v-if="isDelete"
+        elevation="4"
+        fab
+        color="primary"
+        absolute
+        x-small
+        class="delete-fab"
+      >
+        <v-icon>fas fa-trash</v-icon>
       </v-btn>
     </v-container>
   </v-card>
@@ -196,7 +212,8 @@ export default {
     itemUserRating: Number,
     itemLink: String,
     small: Boolean,
-    xSmall: Boolean
+    xSmall: Boolean,
+    isDelete: Boolean
   }
 };
 </script>
