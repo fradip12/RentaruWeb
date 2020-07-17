@@ -39,6 +39,12 @@ const routes = [
     name: 'Wishlist',
     component: () => import('@/views/wishlist'),
   },
+
+  {
+    path: '/search',
+    name: 'Search',
+    component: () => import('@/views/search'),
+  },
 ];
 
 const router = new VueRouter({
