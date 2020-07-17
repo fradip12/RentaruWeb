@@ -4,55 +4,84 @@
       <Header />
 
       <v-container fluid>
-        <div class="text-h6 text-center my-5">Hasil pencarian untuk "meja"</div>
+        <div class="text-h6 text-center my-5">
+          Hasil pencarian untuk "meja"
+        </div>
 
-        <v-card style="background-color:#ce3800;">
-          <v-card-title class="headline white--text">Saring</v-card-title>
+        <!-- saring card -->
+        <v-card flat style="background-color:#ce3800;">
+          <v-card-title class="white--text"
+            ><v-icon class="mr-3" color="white">fas fa-filter</v-icon
+            >Saring</v-card-title
+          >
           <v-expansion-panels accordion>
-            <v-expansion-panel>
+            <KategoriExpansion />
+
+            <!-- start of expansion panel list -->
+            <v-expansion-panel v-for="item in expansionItem" :key="item">
               <v-expansion-panel-header
                 color="primary"
                 class="white--text white"
-                >Kategori
+                >{{ item }}
                 <template v-slot:actions>
                   <v-icon color="white">$expand</v-icon>
                 </template>
               </v-expansion-panel-header>
-              <v-expansion-panel-content color="quarter">
-                <v-list flat>
-                  <v-list-item-group
-                    v-model="settings"
-                    multiple
-                    active-class=""
-                    color="quarter"
-                  >
-                    <v-list-item>
-                      <template v-slot:default="{ active }">
-                        <v-list-item-content>
-                          <v-list-item-title>Outdoor</v-list-item-title>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                          <v-checkbox :input-value="active" />
-                        </v-list-item-action>
-                      </template>
-                    </v-list-item>
-
-                    <v-list-item>
-                      <template v-slot:default="{ active }">
-                        <v-list-item-content>
-                          <v-list-item-title>Outdoor</v-list-item-title>
-                        </v-list-item-content>
-                        <v-list-item-action>
-                          <v-checkbox :input-value="active" />
-                        </v-list-item-action>
-                      </template>
-                    </v-list-item>
-                  </v-list-item-group>
-                </v-list>
-              </v-expansion-panel-content>
             </v-expansion-panel>
+            <!-- end of expansion panel -->
           </v-expansion-panels>
         </v-card>
+        <!-- end of saring card -->
+
+        <!-- urutkan -->
+        <v-row no-gutters class="my-5">
+          <v-col
+            cols="5"
+            style="background-color: #ce3800; height: 40px;"
+            class="d-flex align-center justify-center "
+          >
+            <div class="white--text text-center">
+              <v-icon class="mr-2" color="white">fas fa-sort-amount-down</v-icon
+              >Urutkan
+            </div>
+          </v-col>
+          <v-col>
+            <v-select
+              v-model="sort"
+              :items="sortItem"
+              dense
+              outlined
+              color="primary"
+              class="rounded-0"
+            />
+          </v-col>
+        </v-row>
+        <!-- end of urutkan -->
+
+        <v-container>
+          <IklanB2B
+            title="Paket Liburan 2 Hari 1 Malam"
+            details="Pesan
+            sekarang dan dapatkan diskon 20%"
+            img="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
+          />
+
+          <v-container class="d-flex flex-lg-row flex-wrap justify-center">
+            <CardItem
+              v-for="n in 6"
+              :key="n"
+              itemTitle="Rumah Aman"
+              itemCat="Hunian"
+              itemPrice="Rp. 150Rb / tahun"
+              itemImg="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
+              :itemUserRating="104"
+              :itemRating="5"
+              :small="true"
+            ></CardItem>
+          </v-container>
+
+          <external-ads />
+        </v-container>
       </v-container>
 
       <Footer />
@@ -64,15 +93,28 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
+import KategoriExpansion from "@/components/search/kategoriExpansion";
+import IklanB2B from "@/components/iklanb2b";
+import ExternalAds from "@/components/externalads";
+import CardItem from "@/components/carditem";
+
 export default {
   name: "Search",
+
   components: {
     Header,
-    Footer
+    Footer,
+    KategoriExpansion,
+    IklanB2B,
+    CardItem,
+    ExternalAds
   },
+
   data: function() {
     return {
-      settings: []
+      expansionItem: ["Lokasi", "Rentang Harga", "Penilaian", "Jenis Iklan"],
+      sortItem: ["Relevan", "Harga Terendah", "Harga Tertinggi"],
+      sort: "Relevan"
     };
   },
 

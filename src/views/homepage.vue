@@ -11,33 +11,12 @@
             <!-- iklan teratas -->
             <div class="text-lg-h4 text-sm-h5 my-10">Iklan Teratas</div>
 
-            <div class="container-relative">
-              <img
-                class="top-image"
-                src="../assets/item1.jpeg"
-                alt="iklan teratas"
-              />
-
-              <!-- overlay box -->
-              <div class="top-text">
-                <div class="text-lg-h4 text-sm-h5">
-                  Paket Liburan 2 Hari 1 Malam
-                </div>
-                <div class="text-lg-h6">
-                  Pesan sekarang dan dapatkan diskon 20%
-                </div>
-              </div>
-
-              <!-- rating  -->
-              <div class="top-rating d-flex flex-row align-center">
-                <v-rating
-                  v-bind="size"
-                  background-color="black"
-                  color="black"
-                ></v-rating>
-                <div class="text-lg-h6">(153)</div>
-              </div>
-            </div>
+            <IklanB2B
+              title="Paket Liburan 2 Hari 1 Malam"
+              details="Pesan
+            sekarang dan dapatkan diskon 20%"
+              img="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
+            />
             <!-- end of iklan teratas -->
 
             <!-- rekomendasi untuk anda -->
@@ -151,6 +130,7 @@ import Header from "@/components/header";
 import ExternalAds from "@/components/externalads";
 import CatSlider from "@/components/homepage/catslider";
 import OfferBox from "@/components/homepage/offerbox";
+import IklanB2B from "@/components/iklanb2b";
 
 import "../stylesheet/home.css";
 
@@ -165,7 +145,8 @@ export default {
     UnduhApp,
     Statistics,
     CatSlider,
-    OfferBox
+    OfferBox,
+    IklanB2B
   },
 
   data: () => ({
