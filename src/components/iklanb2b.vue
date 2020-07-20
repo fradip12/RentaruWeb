@@ -72,6 +72,15 @@ export default {
     title: String,
     details: String,
     img: String
+  },
+
+  computed: {
+    size() {
+      const size = { xs: "x-small", sm: "small", lg: "large", xl: "x-large" }[
+        this.$vuetify.breakpoint.name
+      ];
+      return size ? { [size]: true } : {};
+    }
   }
 };
 </script>
