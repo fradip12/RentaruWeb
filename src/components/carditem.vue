@@ -32,12 +32,13 @@
         />
 
         <v-col>
-          <v-container>
+          <v-container class="pa-0 pl-1">
             <div
               :class="{
                 'text-lg-h5': !small && !xSmall,
                 'text-lg-body-1': small,
-                'text-caption': xSmall || small,
+                'text-body-2': !small || !xSmall,
+                'text-caption': small || xSmall,
                 'text-xsmall': xSmall
               }"
             >
@@ -49,9 +50,9 @@
             <div
               :class="{
                 'grey--text': true,
+                'text-caption': true,
                 'text-lg-h6': !small && !xSmall,
-                'text-lg-body-2': small,
-                'text-caption': xSmall || small
+                'text-lg-body-2': small
               }"
             >
               {{ itemCat }}
@@ -63,8 +64,9 @@
                 'mt-md-0': !xSmall,
                 'secondary--text': true,
                 'text-lg-h6': !small && !xSmall,
+                'text-body-2': !small && !xSmall,
                 'text-lg-body-1': small,
-                'text-caption': xSmall || small
+                'text-caption': small || xSmall
               }"
             >
               {{ itemPrice }}
@@ -75,7 +77,6 @@
               :class="{
                 'bottom-rating': true,
                 'right-rating': xSmall,
-                'flex-column': width <= 960 && !xSmall,
                 'align-center': width >= 960 || xSmall
               }"
             >
@@ -88,7 +89,7 @@
                 :x-small="small || xSmall"
               ></v-rating>
               <div
-                v-if="(!small && !xSmall) || width >= 1367"
+                v-if="width >= 1367"
                 :class="{
                   'text-caption': !xSmall,
                   'text-sm-body-1': !small && !xSmall,
@@ -111,7 +112,7 @@
         fab
         color="primary"
         absolute
-        :small="small"
+        :small="!xSmall"
         :x-small="xSmall"
         :class="{
           'btn-fab': !small && !xSmall,
@@ -153,7 +154,7 @@ export default {
       let width = screen.width;
 
       if (width <= 600) {
-        return { width: "80vw", height: "40vw" };
+        return { width: "90vw", height: "35vw" };
       }
 
       if (width < 960) {

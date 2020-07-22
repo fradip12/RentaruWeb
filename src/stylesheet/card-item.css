@@ -17,7 +17,7 @@
 }
 
 .btn-fab {
-  right: -28px;
+  right: -18px;
   bottom: 9vw;
 }
 
@@ -40,11 +40,9 @@
   font-size: 0.6em;
 }
 
-@media screen and (min-width: 600px) {
-  .bottom-rating {
-    position: absolute;
-    bottom: 5px;
-  }
+.bottom-rating {
+  position: absolute;
+  bottom: 0px;
 }
 
 @media screen and (max-width: 960px) {
@@ -74,8 +72,8 @@
 
 @media screen and (max-width: 600px) {
   .box-img {
-    width: 40vw;
-    height: 40vw;
+    width: 35vw;
+    height: 35vw;
   }
 
   .small-box-img {
@@ -89,7 +87,7 @@
   }
 
   .btn-fab {
-    bottom: 13vw;
+    bottom: 12vw;
   }
 
   .small-btn-fab {
@@ -103,6 +101,6 @@
   .right-rating {
     position: absolute;
     right: 10px;
-    bottom: 10px;
+    bottom: 0px;
   }
 }
