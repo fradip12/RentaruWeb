@@ -16,14 +16,11 @@
       class="separator-margin"
     >
       <Slide v-for="item in items" :key="item.key">
-        <div class="box-cat">
-          <v-icon
-            class="center-icon mt-sm-10 mt-5"
-            :size="width <= 960 ? 80 : 150"
-            dark
-            >{{ item.icon }}</v-icon
-          >
-          <div class="white--text text-center text-sm-h5 text-h6 mt-sm-10">
+        <div class="box-cat d-flex flex-column">
+          <v-icon class="" :size="width >= 600 ? 150 : 70" dark>{{
+            item.icon
+          }}</v-icon>
+          <div class="white--text text-center text-sm-h5 text-body-1 mt-sm-10">
             {{ item.text }}
           </div>
         </div>
