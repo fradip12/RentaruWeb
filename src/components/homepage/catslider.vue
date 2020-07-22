@@ -20,7 +20,7 @@
           <v-icon class="" :size="width >= 600 ? 150 : 70" dark>{{
             item.icon
           }}</v-icon>
-          <div class="white--text text-center text-sm-h5 text-body-1 mt-sm-10">
+          <div class="white--text text-center text-sm-h5 text-body-1">
             {{ item.text }}
           </div>
         </div>
