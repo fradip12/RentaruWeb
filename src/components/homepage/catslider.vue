@@ -1,35 +1,37 @@
 <template>
   <v-container fluid style="background-color: #f5f5f5;" class="pa-5">
-    <div
-      class="text-md-h3 text-sm-h4 text-h5 text-center secondary--text mt-sm-10 mt-5"
-    >
-      Temukan Kebutuhanmu
-    </div>
-    <div class="custom-divider" />
+    <v-container class="max-width">
+      <div
+        class="text-md-h3 text-sm-h4 text-h5 text-center secondary--text mt-sm-10 mt-5"
+      >
+        Temukan Kebutuhanmu
+      </div>
+      <div class="custom-divider" />
 
-    <Carousel
-      :autoplay="true"
-      :perPage="width <= 600 ? 2 : width <= 960 ? 3 : 4"
-      :scrollPerPage="false"
-      paginationActiveColor="#ce3800"
-      paginationColor="#ff7543"
-      class="separator-margin"
-    >
-      <Slide v-for="item in items" :key="item.key">
-        <div class="box-cat d-flex flex-column">
-          <v-icon class="" :size="width >= 600 ? 150 : 70" dark>{{
-            item.icon
-          }}</v-icon>
-          <div class="white--text text-center text-sm-h5 text-body-1">
-            {{ item.text }}
+      <Carousel
+        :autoplay="true"
+        :perPage="width <= 600 ? 2 : width <= 960 ? 3 : 4"
+        :scrollPerPage="false"
+        paginationActiveColor="#ce3800"
+        paginationColor="#ff7543"
+        class="separator-margin"
+      >
+        <Slide v-for="item in items" :key="item.key">
+          <div class="box-cat d-flex flex-column">
+            <v-icon class="" :size="width >= 600 ? 150 : 70" dark>{{
+              item.icon
+            }}</v-icon>
+            <div class="white--text text-center text-sm-h5 text-body-1">
+              {{ item.text }}
+            </div>
           </div>
-        </div>
-      </Slide>
-    </Carousel>
+        </Slide>
+      </Carousel>
 
-    <div style="width: 80vw; margin-left: auto; margin-right: auto;">
-      <external-ads />
-    </div>
+      <div style="width: 80%; margin-left: auto; margin-right: auto;">
+        <external-ads />
+      </div>
+    </v-container>
   </v-container>
 </template>
 

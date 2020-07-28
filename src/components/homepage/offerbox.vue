@@ -17,6 +17,8 @@
 .container-size {
   height: 11vw;
   width: 17vw;
+  max-width: 326px;
+  max-height: 212px;
   background-color: #ee4000;
 }
 
@@ -44,6 +46,6 @@
 
 <script>
 export default {
-  name: "OfferBox"
+  name: "OfferBox",
 };
 </script>

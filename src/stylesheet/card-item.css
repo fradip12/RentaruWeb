@@ -2,18 +2,24 @@
   width: 20vw;
   height: 20vw;
   object-fit: cover;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .small-box-img {
   width: 15vw;
   height: 15vw;
   object-fit: cover;
+  max-width: 289px;
+  max-height: 289px;
 }
 
 .xsmall-box-img {
   width: 11vw;
   height: 11vw;
   object-fit: cover;
+  max-width: 212px;
+  max-height: 212px;
 }
 
 .btn-fab {

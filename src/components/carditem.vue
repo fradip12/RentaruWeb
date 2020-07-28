@@ -1,6 +1,20 @@
 <template>
   <v-card
     elevation="4"
+    :max-height="
+      small
+        ? smallSizeCard.maxheight
+        : xSmall
+        ? xsmallSizeCard.maxheight
+        : normalSizeCard.maxheight
+    "
+    :max-width="
+      small
+        ? smallSizeCard.maxwidth
+        : xSmall
+        ? xsmallSizeCard.maxwidth
+        : normalSizeCard.maxwidth
+    "
     :width="
       small
         ? smallSizeCard.width
@@ -18,7 +32,7 @@
     class="ma-lg-7 ma-sm-3 ma-2 pa-0"
     rounded="lg"
   >
-    <v-container class="pa-0" style="position:relative;">
+    <v-container class="pa-0" style="position: relative;">
       <v-row no-gutters>
         <img
           :src="itemImg"
@@ -26,7 +40,7 @@
             'rounded-lg': true,
             'box-img': !small && !xSmall,
             'small-box-img': small,
-            'xsmall-box-img': xSmall
+            'xsmall-box-img': xSmall,
           }"
           alt="itemImg"
         />
@@ -39,7 +53,7 @@
                 'text-lg-body-1': small,
                 'text-body-2': !small || !xSmall,
                 'text-caption': small || xSmall,
-                'text-xsmall': xSmall
+                'text-xsmall': xSmall,
               }"
             >
               {{ itemTitle }}
@@ -52,7 +66,7 @@
                 'grey--text': true,
                 'text-caption': true,
                 'text-lg-h6': !small && !xSmall,
-                'text-lg-body-2': small
+                'text-lg-body-2': small,
               }"
             >
               {{ itemCat }}
@@ -66,7 +80,7 @@
                 'text-lg-h6': !small && !xSmall,
                 'text-body-2': !small && !xSmall,
                 'text-lg-body-1': small,
-                'text-caption': small || xSmall
+                'text-caption': small || xSmall,
               }"
             >
               {{ itemPrice }}
@@ -77,7 +91,7 @@
               :class="{
                 'bottom-rating': true,
                 'right-rating': xSmall,
-                'align-center': width >= 960 || xSmall
+                'align-center': width >= 960 || xSmall,
               }"
             >
               <v-rating
@@ -95,7 +109,7 @@
                   'text-sm-body-1': !small && !xSmall,
                   'text-lg-h5': !small && !xSmall,
                   'text-lg-body-2': small,
-                  'text-xcaption': xSmall
+                  'text-xcaption': xSmall,
                 }"
               >
                 ({{ itemUserRating }})
@@ -117,7 +131,7 @@
         :class="{
           'btn-fab': !small && !xSmall,
           'small-btn-fab': small,
-          'xsmall-btn-fab': xSmall
+          'xsmall-btn-fab': xSmall,
         }"
       >
         <v-icon>mdi-magnify</v-icon>
@@ -161,7 +175,12 @@ export default {
         return { width: "60vw", height: "40vw" };
       }
 
-      return { width: "31vw", height: "20vw" };
+      return {
+        width: "31vw",
+        height: "20vw",
+        maxwidth: "600px",
+        maxheight: "400px",
+      };
     },
 
     smallSizeCard() {
@@ -179,7 +198,12 @@ export default {
         return { width: "24vw", height: "15vw" };
       }
 
-      return { width: "22vw", height: "15vw" };
+      return {
+        width: "22vw",
+        height: "15vw",
+        maxwidth: "423px",
+        maxheight: "289px",
+      };
     },
 
     xsmallSizeCard() {
@@ -197,8 +221,13 @@ export default {
         return { width: "22vw", height: "11vw" };
       }
 
-      return { width: "17vw", height: "11vw" };
-    }
+      return {
+        width: "17vw",
+        height: "11vw",
+        maxwidth: "326px",
+        maxheight: "212px",
+      };
+    },
   },
 
   props: {
@@ -208,13 +237,13 @@ export default {
     itemPrice: String,
     itemRating: {
       type: Number,
-      default: 0
+      default: 0,
     },
     itemUserRating: Number,
     itemLink: String,
     small: Boolean,
     xSmall: Boolean,
-    isDelete: Boolean
-  }
+    isDelete: Boolean,
+  },
 };
 </script>

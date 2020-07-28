@@ -1,11 +1,15 @@
 <template>
   <v-container
     class="min-fill-height d-flex container-relative"
-    style="background-image: linear-gradient(to bottom right, #ce3800, #fe7442);"
+    style="
+      background-image: linear-gradient(to bottom right, #ce3800, #fe7442);
+    "
     fluid
   >
-    <v-row class="justify-center align-content-center">
-      <v-col v-if="width >= 960" cols="1" />
+    <v-row
+      no-gutters
+      class="justify-center align-content-center max-width center-row"
+    >
       <v-col>
         <statistics-item
           iconName="fas fa-users"
@@ -32,7 +36,6 @@
           statsTitle="Transaksi Dilakukan"
         />
       </v-col>
-      <v-col v-if="width >= 960" cols="1" />
     </v-row>
   </v-container>
 </template>
@@ -43,13 +46,13 @@ import StatisticsItem from "./statistics-item";
 export default {
   name: "Statistics",
   components: {
-    StatisticsItem
+    StatisticsItem,
   },
 
   computed: {
     width() {
       return screen.width;
-    }
-  }
+    },
+  },
 };
 </script>
