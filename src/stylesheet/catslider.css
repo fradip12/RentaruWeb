@@ -29,12 +29,14 @@
 @media screen and (max-width: 1366px) {
   .box-cat {
     height: 35vh;
+    max-height: 50vw;
   }
 }
 
 @media screen and (max-width: 960px) {
   .box-cat {
     height: 20vh;
+    max-height: 200px;
   }
   .custom-divider {
     margin-top: 10px;
