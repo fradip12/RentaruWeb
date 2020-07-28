@@ -32,6 +32,7 @@
 .top-image {
   width: 100%;
   height: 40vw;
+  max-height: 700px;
   object-fit: cover;
 }
 
@@ -71,7 +72,7 @@ export default {
   props: {
     title: String,
     details: String,
-    img: String
+    img: String,
   },
 
   computed: {
@@ -80,7 +81,7 @@ export default {
         this.$vuetify.breakpoint.name
       ];
       return size ? { [size]: true } : {};
-    }
-  }
+    },
+  },
 };
 </script>
