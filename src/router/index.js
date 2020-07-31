@@ -3,6 +3,8 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
+
+
 const routes = [
   {
     path: '/',
@@ -23,9 +25,9 @@ const routes = [
   },
 
   {
-    path: '/underconstruct',
-    name: 'Under Construct',
-    component: () => import('@/views/underconstruct'),
+    path: '/under_construction',
+    name: 'Under Construction',
+    component: () => import('@/views/under_construction'),
   },
 
   {

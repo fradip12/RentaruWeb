@@ -9,8 +9,8 @@
             <v-col :cols="width >= 960 ? '4' : false">
               <div class="tersier rounded-lg">
                 <v-container>
-                  <center>
-                    <div style="position: relative;">
+                  <div style="text-align: center;">
+                    <div style="  position: relative;">
                       <v-avatar size="75%" class="mt-6 mb-6">
                         <img src="https://cdn.vuetifyjs.com/images/john.jpg" />
                       </v-avatar>
@@ -26,15 +26,18 @@
                     </div>
                     <h2 class="primary--text">"Srikandi Nusantara"</h2>
                     <h5 class="primary--text">"Bergabung sejak 2019"</h5>
-                  </center>
+                  </div>
                 </v-container>
                 <v-container style="width: 80%">
+
                   <v-btn class="primary--text" outlined tile width="100%">
                     <v-icon left small>mdi-shield-check</v-icon>
                     Akun Terverifikasi
                   </v-btn>
+
                   <div class="mt-4 mb-4"></div>
-                  <v-btn class="primary--text" outlined tile width="100%">
+
+                  <v-btn class="primary--text" outlined tile width="100%" rounded>
                     <v-icon left small>mdi-medal</v-icon>
                     Akun Premium
                   </v-btn>

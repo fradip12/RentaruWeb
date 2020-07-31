@@ -128,11 +128,13 @@ import IklanB2B from "@/components/iklanb2b";
 
 import "../stylesheet/home.css";
 
+
 export default {
+  title: 'Rentaru',
   name: "Homepage",
   components: {
-    Footer,
     Header,
+    Footer,
     CardItem,
     ExternalAds,
     Title,

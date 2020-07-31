@@ -2,7 +2,7 @@
   <div class="primary">
     <v-container>
       <v-row align="center" align-content="stretch" dense>
-        <h1 class="tersier--text">RENTARU</h1>
+        <h1 class="tersier--text" onclick="window.location.href = '/'">RENTARU</h1>
         <div class="pl-2 pr-2"></div>
         <SearchBar></SearchBar>
         <div class="pl-2 pr-2"></div>
@@ -43,28 +43,29 @@ export default {
   },
   data: () => ({
     iconButtons: [
-      {
-        icon: "mdi-cart",
-        value: 5,
-        href: "/"
-      },
-      {
-        icon: "mdi-message-text",
-        href: "/"
-      },
+      // {
+      //   icon: "mdi-cart",
+      //   value: 5,
+      //   href: "/"
+      // },
+      // {
+      //   icon: "mdi-message-text",
+      //   href: "/"
+      // },
+
       {
         icon: "mdi-bell",
-        href: "/"
+        href: "/under_construction"
       },
       {
         icon: "mdi-account",
-        href: "/"
+        href: "/profile"
       }
     ],
     buttons: [
       {
         text: "Pasang Iklan",
-        href: "/"
+        // href: "/"
       }
     ]
   })
