@@ -21,6 +21,7 @@
       </div>
     </div>
     <!-- end of iklan teratas -->
+
   </div>
 </template>
 
