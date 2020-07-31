@@ -8,9 +8,25 @@
       <v-row class="justify-center">
         <v-card class="full-width">
           <v-container class="pa-sm-8">
-            <div class="text-h6 my-2 mt-8 text-center">Login</div>
+            <div class="text-h6 my-2 mt-8 text-center">Register</div>
             <v-text-field
-              placeholder="Username/Email/No. Handphone"
+              placeholder="Nama"
+              outlined
+              rounded
+              full-width
+              dense
+            />
+
+            <v-text-field
+              placeholder="Email"
+              outlined
+              rounded
+              full-width
+              dense
+            />
+
+            <v-text-field
+              placeholder="No. Handphone"
               outlined
               rounded
               full-width
@@ -25,19 +41,23 @@
               dense
             />
 
+            <v-text-field
+              placeholder="Konfirmasi Password"
+              outlined
+              rounded
+              full-width
+              dense
+            />
+
             <v-btn
-              class="tersier--text"
+              class="tersier--text mb-8"
               color="primary"
               rounded
               width="100%"
               href="/blank"
             >
-              Login
+              Register
             </v-btn>
-
-            <div class="grey--text text-subtitle-2 text-center my-4">
-              Lupa Password
-            </div>
           </v-container>
         </v-card>
       </v-row>
@@ -54,6 +74,6 @@
 
 <script>
 export default {
-  name: "Login",
+  name: "Register",
 };
 </script>
