@@ -1,6 +1,5 @@
-
 <template>
-  <div class="elevation-2">
+  <div class="elevation-2 position-fixed">
     <Upper></Upper>
     <Main></Main>
   </div>

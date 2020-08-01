@@ -1,12 +1,12 @@
 import '@mdi/font/css/materialdesignicons.css';
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
-import '@fortawesome/fontawesome-free/css/all.css'; // Ensure you are using css-loader
-
+import '@fortawesome/fontawesome-free/css/all.css';
 Vue.use(Vuetify);
 
 export default new Vuetify({
   theme: {
+    light: true,
     themes: {
       light: {
         primary: '#ee4000',
@@ -14,6 +14,7 @@ export default new Vuetify({
         tersier: '#f5f5f5',
         quarter: '#ff7543',
         accent: '#ffffff',
+        background: '#ababab',
       },
     },
   },

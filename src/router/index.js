@@ -13,6 +13,12 @@ const routes = [
   },
 
   {
+    path: '/l',
+    name: 'Home',
+    component: () => import('@/views/homepage2'),
+  },
+
+  {
     path: '/profile',
     name: 'Profile',
     component: () => import('@/views/profile'),
@@ -46,6 +52,24 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: () => import('@/views/search'),
+  },
+
+  {
+    path: "/register",
+    name: "Register",
+    component: () => import("@/views/register"),
+  },
+
+  {
+    path: "/blank",
+    name: "Blank",
+    component: () => import("@/views/blank"),
+  },
+
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("@/views/login"),
   },
 ];
 

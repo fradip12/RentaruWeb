@@ -1,28 +1,24 @@
 <template>
-  <div>
-    <!-- iklan teratas -->
-    <div class="container-relative">
-      <img class="top-image" :src="img" alt="iklan teratas" />
-
-      <!-- overlay box -->
-      <div class="top-text">
-        <div class="text-lg-h4 text-sm-h5">{{ title }}</div>
-        <div class="text-lg-h6">{{ details }}</div>
-      </div>
-
-      <!-- rating  -->
-      <div class="top-rating d-flex flex-row align-center">
-        <v-rating
-          v-bind="size"
-          background-color="black"
-          color="black"
-        ></v-rating>
-        <div class="text-lg-h6">(153)</div>
-      </div>
+  <!-- iklan teratas -->
+  <div class="container-relative elevation-2 rounded-xl">
+    <img class="top-image rounded-xl" :src="img" alt="iklan teratas" />
+    <!-- overlay box -->
+    <div class="top-text rounded-xl">
+      <div class="text-lg-h4 text-sm-h5">{{ title }}</div>
+      <div class="text-lg-h6">{{ details }}</div>
     </div>
-    <!-- end of iklan teratas -->
 
+    <!-- rating  -->
+    <div class="top-rating d-flex flex-row align-center mx-4">
+      <v-rating
+          v-bind="size"
+          background-color="orange"
+          color="orange"
+      ></v-rating>
+      <div class="text-lg-h6 white--text">(153)</div>
+    </div>
   </div>
+  <!-- end of iklan teratas -->
 </template>
 
 <style scoped>
@@ -32,7 +28,7 @@
 
 .top-image {
   width: 100%;
-  height: 40vw;
+  height: 23vw;
   max-height: 700px;
   object-fit: cover;
 }
@@ -40,13 +36,10 @@
 .top-text {
   position: absolute;
   bottom: 6px;
-  left: 0px;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 20px 40px;
 }
 
 .top-rating {
@@ -58,10 +51,7 @@
 
 @media screen and (max-width: 1264px) {
   .top-text {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 10px 20px;
   }
 }
 </style>

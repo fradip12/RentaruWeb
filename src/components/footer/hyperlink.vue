@@ -1,5 +1,5 @@
 <template>
-  <a class="no-underscored accent--text" :href="href">{{text}}</a>
+  <a class="no-underscored grey--text" :href="href">{{text}}</a>
 </template>
 
 <script>

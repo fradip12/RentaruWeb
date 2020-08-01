@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <Header />
+      <HeaderL />
       <Title />
 
       <v-container class="max-width" fluid>
@@ -16,27 +16,24 @@
         />
         <!-- end of iklan teratas -->
 
-
         <!-- rekomendasi untuk anda -->
-        <v-container class="my-7 mg-1 rounded-xl elevation-2">
-          <div class="text-h5 my-4 mx-4">
-            Rekomendasi untuk Anda
-          </div>
+        <div class="text-lg-h4 text-sm-h5 my-10">
+          Rekomendasi untuk Anda
+        </div>
 
-          <v-container class="pa-0 d-flex flex-row flex-wrap justify-center">
-            <CardItem
-                v-for="item in items"
-                :key="item.key"
-                :itemTitle="item.title"
-                :itemCat="item.cat"
-                :itemPrice="item.price"
-                :itemImg="item.img"
-                :itemUserRating="item.userRating"
-                :itemRating="item.rating"
-            ></CardItem>
-          </v-container>
-
+        <v-container class="pa-0 d-flex flex-row flex-wrap justify-center">
+          <CardItem
+            v-for="item in items"
+            :key="item.key"
+            :itemTitle="item.title"
+            :itemCat="item.cat"
+            :itemPrice="item.price"
+            :itemImg="item.img"
+            :itemUserRating="item.userRating"
+            :itemRating="item.rating"
+          ></CardItem>
         </v-container>
+
         <!-- end of rekomendasi -->
 
         <external-ads />
@@ -123,7 +120,7 @@ import Title from "@/components/homepage/title";
 import UnduhApp from "@/components/homepage/unduhapp";
 import Statistics from "@/components/homepage/statistics";
 import Footer from "@/components/footer";
-import Header from "@/components/header";
+import HeaderL from "@/components/header_l";
 import ExternalAds from "@/components/externalads";
 import CatSlider from "@/components/homepage/catslider";
 import OfferBox from "@/components/homepage/offerbox";
@@ -134,9 +131,9 @@ import "../stylesheet/home.css";
 
 export default {
   title: 'Rentaru',
-  name: "Homepage",
+  name: "HomepageL",
   components: {
-    Header,
+    HeaderL,
     Footer,
 
     IklanB2B,

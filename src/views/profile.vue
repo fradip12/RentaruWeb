@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <Header></Header>
+      <HeaderL></HeaderL>
       <div class="pt-8">
         <v-container>
           <h1>Profil Anda</h1>
@@ -335,13 +335,13 @@
 
 <script>
 import Footer from "@/components/footer";
-import Header from "@/components/header";
+import HeaderL from "@/components/header_l";
 
 export default {
   name: "Profile",
   components: {
     Footer,
-    Header
+    HeaderL
   },
 
   computed: {
