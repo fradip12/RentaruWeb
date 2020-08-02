@@ -1,32 +1,32 @@
 <template>
   <v-card
-      elevation="4"
+      elevation="3"
       :max-height="
       small
-        ? smallSizeCard.maxheight
-        : xSmall
-        ? xsmallSizeCard.maxheight
-        : normalSizeCard.maxheight
+        ? (smallSizeCard.maxHeight)
+        : (xSmall
+        ? xSmallSizeCard.maxHeight
+        : normalSizeCard.maxHeight)
     "
       :max-width="
       small
-        ? smallSizeCard.maxwidth
-        : xSmall
-        ? xsmallSizeCard.maxwidth
-        : normalSizeCard.maxwidth
+        ? (smallSizeCard.maxWidth)
+        : (xSmall
+        ? xSmallSizeCard.maxWidth
+        : normalSizeCard.maxWidth)
     "
       :width="
       small
         ? smallSizeCard.width
         : xSmall
-        ? xsmallSizeCard.width
+        ? xSmallSizeCard.width
         : normalSizeCard.width
     "
       :height="
       small
         ? smallSizeCard.height
         : xSmall
-        ? xsmallSizeCard.height
+        ? xSmallSizeCard.height
         : normalSizeCard.height
     "
       class="ma-lg-7 ma-sm-3 ma-2 pa-0"
@@ -34,63 +34,84 @@
   >
     <v-container class="pa-0" style="position: relative;">
       <v-row no-gutters>
+        <!--Thumbnail-->
         <img
             :src="itemImg"
             :class="{
             'rounded-lg': true,
-            'box-img': !small && !xSmall,
-            'small-box-img': small,
-            'xsmall-box-img': xSmall,
+            // 'box-img': !small && !xSmall,
+            // 'small-box-img': small,
+            'xsmall-box-img': true,
           }"
             alt="itemImg"
         />
-
+        <!--Information-->
         <v-col>
           <v-container class="pa-0 pl-1">
 
             <!--Title-->
             <div
                 :class="{
-                'text-lg-h5': !small && !xSmall,
-                'text-lg-body-1': small,
-                'text-body-2': !small || !xSmall,
-                'text-caption': small || xSmall,
-                'text-xsmall': xSmall,
+                // 'text-lg-h5': !small && !xSmall,
+                // 'text-lg-body-1': small,
+                // 'text-body-2': !small || !xSmall,
+                'text-xcaption': true,
+                // 'text-xsmall': xSmall,
               }"
-                class="m-2"
+                style="margin-top: 5px; margin-left: 5px;"
             >
               {{ itemTitle }}
             </div>
-
-            <v-divider class="my-lg-7"></v-divider>
 
             <!--Category-->
             <div
                 :class="{
                 'grey--text': true,
                 'text-caption': true,
-                'text-lg-h6': !small && !xSmall,
-                'text-lg-body-2': small,
+                // 'text-lg-h6': !small && !xSmall,
+                // 'text-lg-body-2': small,
               }"
+                style="margin-left: 5px; margin-top: 1px;"
             >
               {{ itemCat }}
             </div>
 
+            <v-divider/>
+
             <!--Price-->
             <div
                 :class="{
-                'mt-sm-8': !xSmall && !small,
-                'mt-md-0': !xSmall,
+                // 'mt-sm-8': !xSmall && !small,
+                // 'mt-md-0': !xSmall,
                 'secondary--text': true,
-                'text-lg-h6': !small && !xSmall,
-                'text-body-2': !small && !xSmall,
-                'text-lg-body-1': small,
+                // 'text-lg-h6': !small && !xSmall,
+                // 'text-body-2': !small && !xSmall,
+                // 'text-lg-body-1': small,
                 'text-caption': small || xSmall,
               }"
+                style="margin-top: 5px; margin-left: 5px;"
             >
               {{ itemPrice }}
             </div>
 
+            <!--Address-->
+            <div
+                :class="{
+                // 'mt-sm-8': !xSmall && !small,
+                // 'mt-md-0': !xSmall,
+                'secondary--text': true,
+                // 'text-lg-h6': !small && !xSmall,
+                // 'text-body-2': !small && !xSmall,
+                // 'text-lg-body-1': small,
+                'text-caption': small || xSmall,
+              }"
+                style="margin-top: 5px; margin-left: 5px;"
+            >
+              {{ itemLocation }}
+            </div>
+
+
+            <!--            Rating-->
             <v-row
                 no-gutters
                 :class="{
@@ -98,6 +119,8 @@
                 'right-rating': xSmall,
                 'align-center': width >= 960 || xSmall,
               }"
+                style="margin-top: 5px; margin-left: 5px; margin-bottom: 5px;"
+
             >
               <v-rating
                   color="orange"
@@ -110,12 +133,14 @@
               <div
                   v-if="width >= 1367"
                   :class="{
-                  'text-caption': !xSmall,
-                  'text-sm-body-1': !small && !xSmall,
-                  'text-lg-h5': !small && !xSmall,
-                  'text-lg-body-2': small,
+                  // 'text-caption': !xSmall,
+                  // 'text-sm-body-1': !small && !xSmall,
+                  // 'text-lg-h5': !small && !xSmall,
+                  // 'text-lg-body-2': small,
                   'text-xcaption': xSmall,
                 }"
+                  style="margin-left: 5px;"
+
               >
                 ({{ itemUserRating }})
               </div>
@@ -127,7 +152,7 @@
       <!-- search button -->
       <v-btn
           v-if="!isDelete"
-          elevation="4"
+          elevation="3"
           fab
           color="primary"
           absolute
@@ -183,8 +208,8 @@ export default {
       return {
         width: "31vw",
         height: "20vw",
-        maxwidth: "600px",
-        maxheight: "400px",
+        maxWidth: "400px",
+        maxHeight: "300px",
       };
     },
 
@@ -206,12 +231,12 @@ export default {
       return {
         width: "22vw",
         height: "15vw",
-        maxwidth: "423px",
-        maxheight: "289px",
+        maxWidth: "423px",
+        maxHeight: "289px",
       };
     },
 
-    xsmallSizeCard() {
+    xSmallSizeCard() {
       let width = screen.width;
 
       if (width <= 600) {
@@ -227,10 +252,10 @@ export default {
       }
 
       return {
-        width: "17vw",
-        height: "11vw",
-        maxwidth: "326px",
-        maxheight: "212px",
+        width: "16vw",
+        height: "8vw",
+        maxWidth: "300px",
+        maxHeight: "160px",
       };
     },
   },
@@ -244,6 +269,7 @@ export default {
       type: Number,
       default: 0,
     },
+    itemLocation: String,
     itemUserRating: Number,
     itemLink: String,
     small: Boolean,

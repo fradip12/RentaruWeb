@@ -1,10 +1,10 @@
 
 <template>
   <div
-    class="ma-2 ma-sm-3 ma-lg-7 pa-8 d-flex flex-column justify-center container-size"
+    class="ma-2 ma-sm-3 ma-lg-7 pa-8 d-flex flex-column justify-center container-size rounded-lg"
   >
     <div class="white--text text-body-1 text-lg-h5 text-center">
-      Ingin melihat iklan anda sendiri ?
+      Ingin memasang iklan disini?
     </div>
 
     <v-btn class="mt-lg-8 primary--text" rounded>
@@ -15,31 +15,37 @@
 
 <style scoped>
 .container-size {
-  height: 11vw;
-  width: 17vw;
-  max-width: 326px;
-  max-height: 212px;
+  height: 8vw;
+  width: 16vw;
+  max-width: 300px;
+  max-height: 160px;
   background-color: #ee4000;
 }
 
 @media screen and (max-width: 1366px) {
   .container-size {
-    width: 22vw;
-    height: 11vw;
+    height: 8vw;
+    width: 16vw;
+    max-width: 300px;
+    max-height: 160px;
   }
 }
 
 @media screen and (max-width: 960px) {
   .container-size {
-    width: 35vw;
-    height: 14vw;
+    height: 8vw;
+    width: 16vw;
+    max-width: 300px;
+    max-height: 160px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .container-size {
-    height: 20vh;
-    width: 82vw;
+    height: 8vw;
+    width: 16vw;
+    max-width: 300px;
+    max-height: 160px;
   }
 }
 </style>

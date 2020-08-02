@@ -14,7 +14,7 @@ export default new Vuetify({
         tersier: '#f5f5f5',
         quarter: '#ff7543',
         accent: '#ffffff',
-        background: '#ababab',
+        background: '#f5f5f5',
       },
     },
   },

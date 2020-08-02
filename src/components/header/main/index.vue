@@ -44,26 +44,26 @@ export default {
     SearchBar
   },
   data: () => ({
-    // iconButtons: [
-    //   // {
-    //   //   icon: "mdi-cart",
-    //   //   value: 5,
-    //   //   href: "/"
-    //   // },
-    //   // {
-    //   //   icon: "mdi-message-text",
-    //   //   href: "/"
-    //   // },
-    //
-    //   // {
-    //   //   icon: "mdi-bell",
-    //   //   href: "/under_construction"
-    //   // },
-    //   // {
-    //   //   icon: "mdi-account",
-    //   //   href: "/profile"
-    //   // }
-    // ],
+    iconButtons: [
+      // {
+      //   icon: "mdi-cart",
+      //   value: 5,
+      //   href: "/"
+      // },
+      // {
+      //   icon: "mdi-message-text",
+      //   href: "/"
+      // },
+
+      // {
+      //   icon: "mdi-bell",
+      //   href: "/under_construction"
+      // },
+      // {
+      //   icon: "mdi-account",
+      //   href: "/profile"
+      // }
+    ],
     buttons: [
       {
         text: "Masuk",

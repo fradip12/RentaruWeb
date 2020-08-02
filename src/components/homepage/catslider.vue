@@ -1,26 +1,26 @@
 <template>
-  <v-container fluid style="background-color: #f5f5f5;" class="pa-5">
-    <v-container class="max-width">
+  <v-container fluid style="background: white">
+    <v-container class="max-width" style="padding: 10px; position: center">
       <div
-        class="text-md-h3 text-sm-h4 text-h5 text-center secondary--text mt-sm-10 mt-5"
+          class="text-md-h5 text-sm-h5 text-h5 text-center secondary--text mt-sm-5 mt-5"
       >
         Temukan Kebutuhanmu
       </div>
-      <div class="custom-divider" />
+      <div class="custom-divider"/>
 
       <Carousel
-        :autoplay="true"
-        :perPage="width <= 600 ? 2 : width <= 960 ? 3 : 4"
-        :scrollPerPage="false"
-        paginationActiveColor="#ce3800"
-        paginationColor="#ff7543"
-        class="separator-margin"
-      >
-        <Slide v-for="item in items" :key="item.key">
-          <div class="box-cat d-flex flex-column">
-            <v-icon class="" :size="width >= 600 ? 150 : 70" dark>{{
-              item.icon
-            }}</v-icon>
+          :autoplay="true"
+          :perPage="width <= 600 ? 3 : (width <= 960 ? 4 : 5)"
+          :scrollPerPage="false"
+          paginationActiveColor="#ce3800"
+          paginationColor="#ff7543"
+          class="separator-margin align-center">
+        <Slide v-for="item in items" :key="item.key" style="align-content: center; position: center">
+          <div class="box-cat d-flex flex-column rounded-lg" style="max-height: 220px; max-width: 220px;">
+            <v-icon class="rounded-lg" :size="width >= 600 ? 80 : 70" dark>{{
+                item.icon
+              }}
+            </v-icon>
             <div class="white--text text-center text-sm-h5 text-body-1">
               {{ item.text }}
             </div>
@@ -29,22 +29,20 @@
       </Carousel>
 
       <div style="width: 80%; margin-left: auto; margin-right: auto;">
-        <external-ads />
       </div>
     </v-container>
+
   </v-container>
 </template>
 
 <script>
-import ExternalAds from "@/components/externalads";
-import { Carousel, Slide } from "vue-carousel";
+import {Carousel, Slide} from "vue-carousel";
 
 import "../../stylesheet/catslider.css";
 
 export default {
   name: "CatSlider",
   components: {
-    ExternalAds,
     Carousel,
     Slide,
   },

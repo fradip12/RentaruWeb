@@ -1,9 +1,10 @@
 <template>
-  <div class="white">
+  <div style="background: #ee4000">
     <v-container class="border border-primary">
       <v-row class="flex-column flex-sm-row">
         <v-col>
-          <h2 style="display: inline; color: black">RENTARU &#169;2020</h2>
+          <h3 style="display: inline; color: white">RENTARU &#169;2020</h3>
+          <div style="margin-top: 1vw"/>
           <v-container>
             <v-row>
               <v-col cols="6">
@@ -11,7 +12,7 @@
                     :text="links[0].text"
                     :href="links[0].href"
                 ></Hyperlink>
-                <br />
+                <br/>
                 <Hyperlink
                     :text="links[1].text"
                     :href="links[1].href"
@@ -22,7 +23,7 @@
                     :text="links[2].text"
                     :href="links[2].href"
                 ></Hyperlink>
-                <br />
+                <br/>
                 <Hyperlink
                     :text="links[3].text"
                     :href="links[3].href"
@@ -32,7 +33,8 @@
           </v-container>
         </v-col>
         <v-col>
-          <h2 class="mb-4 black--text">Ikuti Kami:</h2>
+          <h3 style="display: inline; color: white">IKUTI KAMI</h3>
+          <div style="margin-top: 1vw"/>
           <IconButton
               v-for="item in mediaIcons"
               class="mr-4"

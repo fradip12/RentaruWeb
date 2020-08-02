@@ -14,7 +14,7 @@ const routes = [
 
   {
     path: '/l',
-    name: 'Home',
+    name: 'Homel',
     component: () => import('@/views/homepage2'),
   },
 

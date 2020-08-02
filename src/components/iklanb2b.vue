@@ -1,9 +1,9 @@
 <template>
   <!-- iklan teratas -->
-  <div class="container-relative elevation-2 rounded-xl">
-    <img class="top-image rounded-xl" :src="img" alt="iklan teratas" />
+  <div class="container-relative elevation-2 rounded-lg">
+    <img class="top-image rounded-lg" :src="img" alt="iklan teratas" />
     <!-- overlay box -->
-    <div class="top-text rounded-xl">
+    <div class="top-text rounded-lg">
       <div class="text-lg-h4 text-sm-h5">{{ title }}</div>
       <div class="text-lg-h6">{{ details }}</div>
     </div>
