@@ -33,7 +33,7 @@
       rounded="lg"
   >
     <v-container class="pa-0" style="position: relative;">
-      <v-row no-gutters>
+      <v-row no-gutters onclick="goToEvents()">
         <!--Thumbnail-->
         <img
             :src="itemImg"
@@ -163,6 +163,8 @@
           'small-btn-fab': small,
           'xsmall-btn-fab': xSmall,
         }"
+          href="/lihatads"
+          onclick="goToEvents()"
       >
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
@@ -275,6 +277,11 @@ export default {
     small: Boolean,
     xSmall: Boolean,
     isDelete: Boolean,
+  },
+  methods: {
+    goToEvents: function () {
+      location.href = '/lihatads'
+    }
   },
 };
 </script>

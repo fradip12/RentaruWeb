@@ -26,8 +26,31 @@
 <!--     </div>-->
 <!--   </nav>-->
    <div class="app" id="app">
+     <HeaderL v-if="showNav"></HeaderL>
+     <Header v-else></Header>
      <router-view/>
+     <Footer></Footer>
    </div>
  </v-app>
-
 </template>
+
+<script>
+import { mapState } from 'vuex'
+import Header from '@/components/header'
+import HeaderL from '@/components/header_l'
+import Footer from "@/components/footer/index";
+
+export default {
+  components: {
+    Footer,
+    Header,
+    HeaderL,
+  },
+  computed: {
+    ...mapState(['userProfile']),
+    showNav() {
+      return Object.keys(this.userProfile).length > 1
+    }
+  }
+}
+</script>

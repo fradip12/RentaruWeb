@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <Header />
+<!--      <Header />-->
 
       <v-container fluid>
         <v-row no-gutters class="justify-center justify-md-center">
@@ -14,7 +14,7 @@
           <v-col class="ma-5 overflow-y-auto max-height">
             <!-- share and cart btn -->
             <div class="d-flex flex-row-reverse">
-              <v-icon class="mx-5" color="primary">fas fa-shopping-cart</v-icon>
+<!--              <v-icon class="mx-5" color="primary">fas fa-shopping-cart</v-icon>-->
               <v-icon class="mx-5" color="primary">fas fa-share-alt</v-icon>
             </div>
 
@@ -40,10 +40,10 @@
               <span class=" font-weight-medium grey--text">Fashion</span>
             </div>
 
-            <div class="text-h6 my-2 font-weight-bold">
-              Stok Tersedia :
-              <span class="grey--text font-weight-medium">5 Buah</span>
-            </div>
+<!--            <div class="text-h6 my-2 font-weight-bold">-->
+<!--              Stok Tersedia :-->
+<!--              <span class="grey&#45;&#45;text font-weight-medium">5 Buah</span>-->
+<!--            </div>-->
 
             <!-- user info -->
             <div class="text-h6 my-2 mt-8 font-weight-bold">
@@ -88,21 +88,21 @@
         <v-row no-gutters>
           <v-col cols="1" v-if="width >= 960" />
           <v-col>
-            <div class="text-h4 my-7 text-center text-sm-left">
+            <div class="text-h5 my-7 text-center text-sm-left">
               Iklan Lain yang Terkait
             </div>
             <v-container>
               <v-row class="justify-center">
                 <CardItem
-                  v-for="n in 3"
+                  v-for="n in 4"
                   :key="n"
                   itemTitle="Rumah Aman"
                   itemCat="Hunian"
-                  itemPrice="Rp. 150Rb / tahun"
+                  itemPrice="Rp. 150.000 / hari"
                   itemImg="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
                   :itemUserRating="104"
                   :itemRating="5"
-                  :small="true"
+                  :xSmall="true"
                 />
               </v-row>
             </v-container>
@@ -141,14 +141,14 @@
 
 <script>
 import Footer from "@/components/footer";
-import Header from "@/components/header";
+// import Header from "@/components/header";
 import UserProfile from "@/components/lihatads/userprofile";
 import CardItem from "@/components/carditem";
 
 export default {
   name: "LihatAd",
   components: {
-    Header,
+    // Header,
     UserProfile,
     CardItem,
     Footer

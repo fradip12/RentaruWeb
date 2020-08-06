@@ -1,9 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import {auth} from "../firebase";
 
 Vue.use(VueRouter);
-
-
 
 const routes = [
   {
@@ -13,15 +12,12 @@ const routes = [
   },
 
   {
-    path: '/l',
-    name: 'Homel',
-    component: () => import('@/views/homepage2'),
-  },
-
-  {
     path: '/profile',
     name: 'Profile',
     component: () => import('@/views/profile'),
+    meta: {
+      requiresAuth: true
+    }
   },
 
   {
@@ -46,6 +42,9 @@ const routes = [
     path: '/wishlist',
     name: 'Wishlist',
     component: () => import('@/views/wishlist'),
+    meta: {
+      requiresAuth: true
+    }
   },
 
   {
@@ -79,4 +78,15 @@ const router = new VueRouter({
   routes,
 });
 
-export default router;
+// navigation guard to check for logged in users
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(x => x.meta.requiresAuth)
+
+  if (requiresAuth && !auth.currentUser) {
+    next('/login')
+  } else {
+    next()
+  }
+})
+
+export default router

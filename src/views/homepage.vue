@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header></Header>
+<!--    <Header></Header>-->
     <Title/>
 
     <v-container fluid style="background: white">
@@ -17,6 +17,8 @@
     </v-container>
 
     <cat-slider/>
+
+
 
     <!--Rekomendasi untuk Anda-->
     <v-container class="max-width" fluid>
@@ -228,6 +230,7 @@ import Title from "@/components/homepage/title";
 import UnduhApp from "@/components/homepage/unduhapp";
 // import Statistics from "@/components/homepage/statistics";
 import Footer from "@/components/footer";
+// eslint-disable-next-line no-unused-vars
 import Header from "@/components/header";
 import ExternalAds from "@/components/externalads";
 import CatSlider from "@/components/homepage/catslider";
@@ -241,7 +244,7 @@ export default {
   title: 'Rentaru',
   name: "Homepage",
   components: {
-    Header,
+    // Header,
     Title,
 
     IklanB2B,
