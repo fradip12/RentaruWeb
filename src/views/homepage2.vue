@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <HeaderL />
+      <Header />
       <Title />
 
       <v-container class="max-width" fluid>
@@ -120,7 +120,8 @@ import Title from "@/components/homepage/title";
 import UnduhApp from "@/components/homepage/unduhapp";
 import Statistics from "@/components/homepage/statistics";
 import Footer from "@/components/footer";
-import HeaderL from "@/components/header_l";
+// import HeaderL from "@/components/header_l";
+import Header from "@/components/header";
 import ExternalAds from "@/components/externalads";
 import CatSlider from "@/components/homepage/catslider";
 import OfferBox from "@/components/homepage/offerbox";
@@ -128,16 +129,15 @@ import IklanB2B from "@/components/iklanb2b";
 
 import "../stylesheet/home.css";
 
-
 export default {
-  title: 'Rentaru',
+  title: "Rentaru",
   name: "HomepageL",
   components: {
-    HeaderL,
+    // HeaderL,
     Footer,
 
     IklanB2B,
-
+    Header,
     CardItem,
     ExternalAds,
     Title,
@@ -145,7 +145,6 @@ export default {
     Statistics,
     CatSlider,
     OfferBox,
-
   },
 
   data: () => ({
