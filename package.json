@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "css-loader": "^4.2.0",
     "firebase": "^7.17.1",
+    "html-webpack-plugin": "^4.3.0",
     "path": "^0.12.7",
     "serve-favicon": "^2.5.0",
     "style-loader": "^1.2.1",
@@ -49,9 +50,7 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {
-
-    }
+    "rules": {}
   },
   "browserslist": [
     "> 1%",

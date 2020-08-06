@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <v-main>
-      <HeaderL></HeaderL>
       <div class="pt-8">
         <v-container>
           <h1>Profil Anda</h1>
@@ -328,22 +327,14 @@
           </v-row>
         </v-container>
       </div>
-      <Footer></Footer>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Footer from "@/components/footer";
-import HeaderL from "@/components/header_l";
 
 export default {
   name: "Profile",
-  components: {
-    Footer,
-    HeaderL
-  },
-
   computed: {
     width() {
       return screen.width;

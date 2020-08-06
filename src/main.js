@@ -8,26 +8,17 @@ import {auth} from "@/firebase";
 
 Vue.config.productionTip = false;
 
-
-import titleMixin from "@/mixin/titleMixin";
-
-Vue.mixin(titleMixin)
-
-let app
+// let app
 auth.onAuthStateChanged(user => {
-    if (!app) {
-        app = new Vue({
-            router,
-            store,
-            vuetify,
-            render: h => h(App)
-        }).$mount('#app')
-    }
-
-    if (user) {
-        store.dispatch('fetchUserProfile', user)
-    }
+    store.dispatch("fetchUser", user);//.then(() => {});
 })
+
+new Vue({
+    router,
+    store,
+    vuetify,
+    render: h => h(App)
+}).$mount('#app')
 
 // new Vue({
 //     render: h => h(App),

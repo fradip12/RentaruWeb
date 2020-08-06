@@ -1,6 +1,5 @@
 <template>
   <div>
-<!--    <Header></Header>-->
     <Title/>
 
     <v-container fluid style="background: white">
@@ -220,7 +219,6 @@
     <div style="margin-top: 3vw;"/>
     <!--    <statistics/>-->
     <unduh-app/>
-    <Footer/>
   </div>
 </template>
 
@@ -229,7 +227,7 @@ import CardItem from "@/components/carditem";
 import Title from "@/components/homepage/title";
 import UnduhApp from "@/components/homepage/unduhapp";
 // import Statistics from "@/components/homepage/statistics";
-import Footer from "@/components/footer";
+// import Footer from "@/components/footer";
 // eslint-disable-next-line no-unused-vars
 import Header from "@/components/header";
 import ExternalAds from "@/components/externalads";
@@ -241,7 +239,7 @@ import "../stylesheet/home.css";
 
 
 export default {
-  title: 'Rentaru',
+  // title: 'Rentaru',
   name: "Homepage",
   components: {
     // Header,
@@ -256,7 +254,6 @@ export default {
     // Statistics,
     CatSlider,
     OfferBox,
-    Footer,
   },
 
   data: () => ({
