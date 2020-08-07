@@ -24,31 +24,16 @@
         </div>
 
         <v-container>
-
-          <template v-if="width >= 600">
-            <v-row class="justify-center justify-sm-start">
-              <unduhBtn
-                  iconName="fab fa-apple"
-                  marketText="App Store"
-              />
-              <unduhBtn
-                  iconName="fab fa-google-play"
-                  marketText="Google Play"
-              />
-            </v-row>
-          </template>
-          <template v-else>
-            <v-row class="justify-center justify-sm-start">
-              <unduhBtn
-                  iconName="fab fa-apple"
-                  marketText="App Store"
-              />
-              <unduhBtn
-                  iconName="fab fa-google-play"
-                  marketText="Google Play"
-              />
-            </v-row>
-          </template>
+          <v-row class="justify-center justify-sm-start">
+            <unduhBtn
+                iconName="fab fa-apple"
+                marketText="App Store"
+            />
+            <unduhBtn
+                iconName="fab fa-google-play"
+                marketText="Google Play"
+            />
+          </v-row>
 
         </v-container>
       </v-col>

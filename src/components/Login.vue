@@ -1,5 +1,6 @@
 <template>
-  <div id="login">
+  <div id="login" :style="{backgroundImage: bgPath,
+  background: bgPath}">
     <div style="height: 10vh"></div>
     <div>
       <v-container
@@ -42,9 +43,9 @@
                 </v-btn>
                 <div style="height: 1px"/>
                 <div class="grey--text text-subtitle-2 text-center my-4 extras">
-                  <a @click="togglePasswordReset()">Lupa Password?</a>
+                  <a @click="goToEvents('Home')">Lupa Password?</a>
                   <div style="height: 10px"/>
-                  <a @click="toggleForm()">Buat Akun Baru</a>
+                  <a @click="goToEvents('Register')">Buat Akun Baru</a>
                 </div>
               </form>
             </v-container>
@@ -63,6 +64,7 @@ export default {
   name: "Login",
   data() {
     return {
+      bgPath: require('@/assets/bg_auth.jpg'),
       form: {
         email: '',
         password: '',
@@ -80,8 +82,12 @@ export default {
           .catch(err => {
             this.error = err.message;
           })
+    },
+    goToEvents(param) {
+      this.$router.replace({name: param});
+
     }
-  }
+  },
 }
 </script>
 

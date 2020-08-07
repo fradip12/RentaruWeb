@@ -62,8 +62,8 @@
                   Lihat Iklan Saya
                 </v-btn>
                 <div class="mt-4 mb-4"></div>
-                <v-btn class="primary--text" outlined tile width="100%">
-                  <v-icon left @click.prevent="signOut">mdi-logout</v-icon>
+                <v-btn class="primary--text" outlined tile width="100%" @click.prevent="signOut">
+                  <v-icon left>mdi-logout</v-icon>
                   Log Out
                 </v-btn>
               </v-container>

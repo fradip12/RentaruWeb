@@ -1,53 +1,56 @@
 <template>
   <v-container
-      class="fill-height true-fill-height main-bg container-relative pa-0"
+      class="main-bg container-relative pa-0"
       fluid
-  >
-    <v-row no-gutters>
-      <v-col v-if="width >= 960" cols="1"></v-col>
-      <v-col>
-        <div class="text-lg-h2 text-h3 white--text text-center text-md-left">
-          Sewa Barang dan Jasa?
+      :style="{height: getHeight + 'px'}">
+    <v-row no-gutters class="my-3">
+
+      <v-col class="text-center center-item" style="height: 300px;">
+        <div class="white--text text-center"
+             style="font-size: 2em;">
+          Sewa Barang dan Jasa? Rentaru Aja!
         </div>
 
-        <!--        <br />-->
-
-        <div
-            class="mt-5 text-lg-h3 text-h3 white--text text-center text-md-left">
-          Rentaru Saja
-
-        </div>
+        <template v-if="width > 900">
+          <div style="height: 1vh"/>
+        </template>
 
         <v-btn
-            class="mt-lg-16 mt-10 primary--text align-self-center"
+            class="ms-3 mt-2 primary--text align-self-center"
             x-large
-            :block="width <= 960 ? true : false"
+            :block="width <= 960"
             rounded
-            color="white">
+            color="white"
+            style="font-size: 1em; min-width: 280px; max-width: 130px;">
           Jelajahi Kategori
         </v-btn>
+        <br>
 
-        <br/>
+        <template v-if="width > 900">
+          <div style="height: 1vh"/>
+        </template>
 
         <v-btn
-            class="mt-lg-16 mt-sm-5 white--text"
+            class="ms-3 mt-2 white--text"
             x-large
-            :block="width <= 960 ? true : false"
+            :block="width <= 960"
             rounded
             outlined
             color="white"
+            style="font-size: 1em; min-width: 280px; "
         >Pelajari Lebih Lanjut
         </v-btn
         >
       </v-col>
 
-      <v-col v-if="width >= 960" cols="5">
-        <img src="../../assets/man.png" class="man-img"/>
+      <v-col v-if="width >= 960">
+        <img src="../../assets/man.png" class="man-img" alt="man_banner"
+             :height="getHeight*0.8"/>
       </v-col>
     </v-row>
 
-    <div class="center-item">
-      <div class="text-lg-h5 white--text">Lihat Iklan</div>
+    <div class="center-item mt-2">
+      <div class="white--text">Lihat Iklan</div>
       <v-icon v-bind="size" dark>mdi-chevron-down</v-icon>
     </div>
   </v-container>
@@ -66,7 +69,14 @@ export default {
           this.$vuetify.breakpoint.name
           ];
       return size ? {[size]: true} : {};
-    }
+    },
+    getHeight() {
+      if (this.width < 900) {
+        return screen.height * 0.5;
+      } else {
+        return screen.height * 0.4;
+      }
+    },
   }
 };
 </script>

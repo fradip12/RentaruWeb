@@ -2,9 +2,9 @@
 <template>
   <v-btn
     dark
-    class="pa-7 ma-2 rounded-lg"
+    class="pa-2 ma-2 rounded-lg"
     :width="width <= 600 ? '150px' : width <= 960 ? '200px' : '250px'"
-    :height="width <= 600 ? '10px' : width <= 960 ? '19px' : '80px'"
+    :height="width <= 600 ? '50px' : width <= 960 ? '65px' : '80px'"
   >
     <v-container>
       <v-row no-gutters>

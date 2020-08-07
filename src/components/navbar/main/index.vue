@@ -7,15 +7,15 @@
             RENTARU
           </router-link>
         </template>
-        <template v-else>
-          <router-link to="/">
-            <v-img :src="homeIcon"/>
-          </router-link>
-        </template>
+<!--        <template v-else>-->
+<!--          <router-link to="/">-->
+<!--            <v-img :src="homeIcon"/>-->
+<!--          </router-link>-->
+<!--        </template>-->
         <!--        <h1 class="tersier&#45;&#45;text" onclick="window.location.href = '/'">RENTARU</h1>-->
         <div class="pl-2 pr-2"></div>
         <template v-if="width <= 600">
-          <div style="width: 45vw;">
+          <div style="width: 65vw;">
             <SearchBar/>
           </div>
         </template>
@@ -73,15 +73,15 @@ export default {
     ],
     buttons: [
       {
-        text: "Masuk",
+        text: "MASUK",
         href: "/login",
         need_auth: false,
       },
-      {
-        text: "Daftar",
-        href: "/register",
-        need_auth: false,
-      },
+      // {
+      //   text: "Daftar",
+      //   href: "/register",
+      //   need_auth: false,
+      // },
       {
         text: "Pasang Iklan",
         href: "/",
