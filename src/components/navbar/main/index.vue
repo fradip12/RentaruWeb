@@ -2,28 +2,46 @@
   <div class="primary">
     <v-container>
       <v-row align="center" align-content="stretch" dense>
-        <router-link to="/" class="navbar-brand tersier--text text-h3" style="text-decoration: none; color: inherit;">
-          RENTARU
-        </router-link>
+        <template v-if="width >= 900">
+          <router-link to="/" class="navbar-brand tersier--text text-h3" style="text-decoration: none; color: inherit;">
+            RENTARU
+          </router-link>
+        </template>
+        <template v-else>
+          <router-link to="/">
+            <v-img :src="homeIcon"/>
+          </router-link>
+        </template>
         <!--        <h1 class="tersier&#45;&#45;text" onclick="window.location.href = '/'">RENTARU</h1>-->
         <div class="pl-2 pr-2"></div>
-        <SearchBar></SearchBar>
-        <div class="pl-2 pr-2"></div>
-        <div class="d-flex flex-row mt-2">
+        <template v-if="width <= 600">
+          <div style="width: 45vw;">
+            <SearchBar/>
+          </div>
+        </template>
+        <template v-else>
+          <SearchBar/>
+        </template>
+        <div style="width: 1vw;"/>
+<!--        <div class="pl-2 pr-2"></div>-->
+        <div class="d-flex flex-row">
 
-          <div class="pl-2 pr-2"></div>
+<!--          <div class="pl-2 pr-2"></div>-->
+
           <IconButton v-for="item in getData('iconButton', user.loggedIn)"
                       :key="item.key"
                       :icon="item.icon"
                       :href="item.href"
           ></IconButton>
           <div style="width: 1vw;"/>
+
           <Button
               v-for="item in getData('button', user.loggedIn)"
               :key="item.text"
               :text="item.text"
               :href="item.href">
           </Button>
+
         </div>
       </v-row>
     </v-container>
@@ -44,6 +62,7 @@ export default {
     SearchBar
   },
   data: () => ({
+    homeIcon: require('@/assets/home-32.png'),
     iconButtons: [
       {
         key: "jahbfhkdafa",
@@ -82,7 +101,9 @@ export default {
     },
   },
   computed: {
-
+    width() {
+      return screen.width;
+    },
     ...mapGetters({
       user: "user"
     })

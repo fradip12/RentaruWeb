@@ -18,38 +18,8 @@
     <cat-slider/>
 
 
-
     <!--Rekomendasi untuk Anda-->
     <v-container class="max-width" fluid>
-
-
-      <!--        &lt;!&ndash; rekomendasi untuk anda &ndash;&gt;-->
-      <!--        <v-container class="my-7 mg-1 rounded-lg elevation-2">-->
-      <!--          <div class="text-h5 my-4 mx-4">-->
-      <!--            Rekomendasi untuk Anda-->
-      <!--          </div>-->
-
-      <!--          <v-container class="pa-0 d-flex flex-row flex-wrap justify-center">-->
-      <!--            <CardItem-->
-      <!--                v-for="item in items"-->
-      <!--                :key="item.key"-->
-      <!--                :itemTitle="item.title"-->
-      <!--                :itemCat="item.cat"-->
-      <!--                :itemPrice="item.price"-->
-      <!--                :itemImg="item.img"-->
-      <!--                :itemUserRating="item.userRating"-->
-      <!--                :itemRating="item.rating"-->
-      <!--            ></CardItem>-->
-      <!--          </v-container>-->
-
-      <!--        </v-container>-->
-      <!--        &lt;!&ndash; end of rekomendasi &ndash;&gt;-->
-
-      <!--        <external-ads v-for="item in externalAds"-->
-      <!--                      :key="item.key"-->
-      <!--                      :imgUrl="item.imgUrl"/>-->
-
-      <!-- mungkin anda minati -->
       <div class="text-lg-h5 text-sm-h5 my-10">
         Rekomendasi untuk Anda
       </div>
@@ -68,19 +38,21 @@
               :xSmall=true
           />
 
-
-          <!--          <CardItem-->
-          <!--              v-if="i != 10"-->
-          <!--              :key="i"-->
-          <!--              itemTitle="Rumah Aman"-->
-          <!--              itemCat="Hunian"-->
-          <!--              itemPrice="Rp. 120.000/hari"-->
-          <!--              itemImg="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"-->
-          <!--              :itemUserRating="104"-->
-          <!--              :itemRating="5"-->
-          <!--              :xSmall="true"-->
-          <!--          ></CardItem>-->
           <OfferBox v-if="item.id === ';asdlkfj;ga9083274'"/>
+        </div>
+
+        <div class="d-flex justify-center my-10">
+          <v-btn
+              class="align-self-center"
+              color="deep-orange darken-1"
+              outlined
+              rounded
+              x-large
+              v-on:click="isShowMore = true"
+              v-if="!isShowMore"
+          >Muat Lebih Banyak
+          </v-btn
+          >
         </div>
 
         <!-- see more -->
@@ -118,19 +90,6 @@
           </div>
         </div>
 
-        <div class="d-flex justify-center my-10">
-          <v-btn
-              class="align-self-center"
-              color="deep-orange darken-1"
-              outlined
-              rounded
-              x-large
-              v-on:click="isShowMore = true"
-              v-if="!isShowMore"
-          >Muat Lebih Banyak
-          </v-btn
-          >
-        </div>
 
         <!-- end of see more -->
       </v-container>
@@ -147,7 +106,7 @@
       </div>
       <v-container class="d-flex flex-lg-row flex-wrap justify-center rounded-lg white elevation-1">
         <CardItem
-            v-for="n in 8"
+            v-for="n in 12"
             :key="n"
             itemTitle="Rumah Aman"
             itemCat="Hunian"
@@ -218,6 +177,7 @@
 
     <div style="margin-top: 3vw;"/>
     <!--    <statistics/>-->
+
     <unduh-app/>
   </div>
 </template>
@@ -256,6 +216,11 @@ export default {
     OfferBox,
   },
 
+  computed: {
+    width() {
+      return screen.width;
+    },
+  },
   data: () => ({
     items: [
       {

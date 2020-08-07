@@ -1,6 +1,6 @@
 <template>
   <v-text-field
-    placeholder="Saya mencari..."
+    placeholder="Cari iklan..."
     background-color="tersier"
     append-icon="mdi-magnify"
     dense

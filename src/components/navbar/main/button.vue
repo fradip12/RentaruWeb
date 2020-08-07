@@ -1,5 +1,5 @@
 <template>
-  <v-btn class="lowercase primary--text ma-1" :href="href" color="tersier" rounded depressed>
+  <v-btn class="lowercase primary--text mx-1" :href="href" color="tersier" rounded depressed>
     {{ text }}
   </v-btn>
 </template>
@@ -20,9 +20,6 @@ export default {
 </script>
 
 <style scoped>
-.lowercased {
-  text-transform: none !important;
-}
 .lowercase {
   text-transform: none !important;
 }

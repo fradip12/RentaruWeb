@@ -2,19 +2,20 @@
 <template>
   <v-btn
     dark
-    class="pa-8 ma-5 ma-sm-0 mr-sm-5 mr-md-5 ma-md-5 rounded-lg"
-    :width="width <= 600 ? '230px' : width <= 960 ? '171px' : '260px'"
-    :height="width <= 600 ? '30px' : width <= 960 ? '19px' : '80px'"
+    class="pa-7 ma-2 rounded-lg"
+    :width="width <= 600 ? '150px' : width <= 960 ? '200px' : '250px'"
+    :height="width <= 600 ? '10px' : width <= 960 ? '19px' : '80px'"
   >
     <v-container>
       <v-row no-gutters>
-        <v-icon :size="width <= 600 ? '30' : width <= 960 ? '40' : '50'">{{
+        <v-icon :size="width <= 600 ? '20' : width <= 960 ? '30' : '40'">{{
           iconName
         }}</v-icon>
+
         <v-col class="justify-start ml-4 ml-md-4 ml-sm-2">
           <div class="text-left text-md-subtitle-2 text-caption">
-            Dapatkan di<br />
-            <span class="text-left text-md-h5 text-sm-body-1 text-h6 pa-0">{{
+            DOWNLOAD DI<br />
+            <span class="text-left text-sm-body-1 pa-0" style="font-size: 1em;">{{
               marketText
             }}</span>
           </div>

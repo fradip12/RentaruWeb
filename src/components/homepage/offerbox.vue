@@ -7,7 +7,7 @@
       Ingin memasang iklan disini?
     </div>
 
-    <v-btn class="mt-lg-8 primary--text" rounded>
+    <v-btn class="mt-lg-8 primary--text my-2" rounded>
       Pasang Iklan
     </v-btn>
   </div>
@@ -24,8 +24,9 @@
 
 @media screen and (max-width: 1366px) {
   .container-size {
+    min-height: 130px;
     height: 8vw;
-    width: 16vw;
+    width: 22vw;
     max-width: 300px;
     max-height: 160px;
   }
@@ -33,6 +34,7 @@
 
 @media screen and (max-width: 960px) {
   .container-size {
+    min-height: 130px;
     height: 8vw;
     width: 16vw;
     max-width: 300px;
@@ -42,6 +44,8 @@
 
 @media screen and (max-width: 600px) {
   .container-size {
+    min-height: 130px;
+    min-width: 280px;
     height: 8vw;
     width: 16vw;
     max-width: 300px;

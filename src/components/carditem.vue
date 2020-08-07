@@ -1,6 +1,7 @@
 <template>
   <v-card
       elevation="3"
+      :min-height=130
       :max-height="
       small
         ? (smallSizeCard.maxHeight)
@@ -115,7 +116,7 @@
             <v-row
                 no-gutters
                 :class="{
-                'bottom-rating': true,
+                'bottom-rating': width <= 960,
                 'right-rating': xSmall,
                 'align-center': width >= 960 || xSmall,
               }"
@@ -196,61 +197,62 @@ export default {
       return screen.width;
     },
 
-    normalSizeCard() {
-      let width = screen.width;
-
-      if (width <= 600) {
-        return {width: "90vw", height: "35vw"};
-      }
-
-      if (width < 960) {
-        return {width: "60vw", height: "40vw"};
-      }
-
-      return {
-        width: "31vw",
-        height: "20vw",
-        maxWidth: "400px",
-        maxHeight: "300px",
-      };
-    },
-
-    smallSizeCard() {
-      let width = screen.width;
-
-      if (width <= 600) {
-        return {width: "60vw", height: "32vw"};
-      }
-
-      if (width < 960) {
-        return {width: "35vw", height: "20vw"};
-      }
-
-      if (width < 1264) {
-        return {width: "24vw", height: "15vw"};
-      }
-
-      return {
-        width: "22vw",
-        height: "15vw",
-        maxWidth: "423px",
-        maxHeight: "289px",
-      };
-    },
+    // normalSizeCard() {
+    //   let width = screen.width;
+    //
+    //   if (width <= 600) {
+    //     return {width: "90vw", height: "35vw"};
+    //   }
+    //
+    //   if (width < 960) {
+    //     return {width: "60vw", height: "40vw"};
+    //   }
+    //
+    //   return {
+    //     width: "31vw",
+    //     height: "20vw",
+    //     maxWidth: "400px",
+    //     maxHeight: "300px",
+    //   };
+    // },
+    //
+    // smallSizeCard() {
+    //   let width = screen.width;
+    //
+    //   if (width <= 600) {
+    //     return {width: "60vw", height: "32vw"};
+    //   }
+    //
+    //   if (width < 960) {
+    //     return {width: "35vw", height: "20vw"};
+    //   }
+    //
+    //   if (width < 1264) {
+    //     return {width: "24vw", height: "15vw"};
+    //   }
+    //
+    //   return {
+    //     width: "22vw",
+    //     height: "15vw",
+    //     maxWidth: "423px",
+    //     maxHeight: "289px",
+    //   };
+    // },
 
     xSmallSizeCard() {
       let width = screen.width;
 
       if (width <= 600) {
-        return {width: "82vw", height: "20vw"};
+        return {width: "82vw", height: "8vw"};
       }
 
       if (width <= 960) {
-        return {width: "35vw", height: "14vw"};
+        return {width: "32vw", height: "8vw"};
       }
 
+      // Full HD
       if (width <= 1366) {
-        return {width: "22vw", height: "11vw"};
+        return {width: "22vw", height: "8vw"};
       }
 
       return {
