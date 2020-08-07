@@ -4,7 +4,7 @@
     dark
     class="pa-2 ma-2 rounded-lg"
     :width="width <= 600 ? '150px' : width <= 960 ? '200px' : '250px'"
-    :height="width <= 600 ? '50px' : width <= 960 ? '65px' : '80px'"
+    :height="width <= 600 ? '60px' : width <= 960 ? '75px' : '90px'"
   >
     <v-container>
       <v-row no-gutters>
@@ -12,7 +12,7 @@
           iconName
         }}</v-icon>
 
-        <v-col class="justify-start ml-4 ml-md-4 ml-sm-2">
+        <v-col class="justify-start ml-3 ml-md-2 ml-sm-1">
           <div class="text-left text-md-subtitle-2 text-caption">
             DOWNLOAD DI<br />
             <span class="text-left text-sm-body-1 pa-0" style="font-size: 1em;">{{

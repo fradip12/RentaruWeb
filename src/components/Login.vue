@@ -1,6 +1,5 @@
 <template>
-  <div id="login" :style="{backgroundImage: bgPath,
-  background: bgPath}">
+  <div id="login">
     <div style="height: 10vh"></div>
     <div>
       <v-container

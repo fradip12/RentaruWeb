@@ -1,6 +1,6 @@
 <template>
   <v-container
-      class="main-bg container-relative pa-0"
+      class="main-bg container-relative p-0"
       fluid
       :style="{height: getHeight + 'px'}">
     <v-row no-gutters class="my-3">
@@ -72,7 +72,7 @@ export default {
     },
     getHeight() {
       if (this.width < 900) {
-        return screen.height * 0.5;
+        return screen.height * 0.4;
       } else {
         return screen.height * 0.4;
       }

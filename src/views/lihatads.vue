@@ -100,6 +100,7 @@
                   itemCat="Hunian"
                   itemPrice="Rp. 150.000 / hari"
                   itemImg="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
+                  itemLocation="Kota Surabaya"
                   :itemUserRating="104"
                   :itemRating="5"
                   :xSmall="true"
