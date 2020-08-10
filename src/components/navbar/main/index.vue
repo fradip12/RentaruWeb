@@ -27,7 +27,7 @@
             <v-container>
               <v-row>
                 <!-- main kategori -->
-                <v-col cols="2" class="border">
+                <v-col class="border">
                   <v-list>
                     <v-list-item-group v-model="selectedMenu">
                       <v-list-item
@@ -49,7 +49,7 @@
                 <!-- end of main kategori -->
 
                 <!-- subkat -->
-                <v-col>
+                <v-col cols="10" v-if="width >= 600">
                   <v-list>
                     <v-list-item
                       v-for="subkat in subkat[selectedMenu]"
