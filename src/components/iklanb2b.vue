@@ -1,24 +1,14 @@
 <template>
-  <!-- iklan teratas -->
-  <div class="container-relative elevation-2 rounded-lg">
-    <img class="top-image rounded-lg" :src="img" alt="iklan teratas" />
-    <!-- overlay box -->
-    <div class="top-text rounded-lg">
-      <div class="text-lg-h4 text-sm-h5">{{ title }}</div>
-      <div class="text-lg-h6">{{ details }}</div>
-    </div>
-
-    <!-- rating  -->
-    <div class="top-rating d-flex flex-row align-center mx-4">
-      <v-rating
-          v-bind="size"
-          background-color="orange"
-          color="orange"
-      ></v-rating>
-      <div class="text-lg-h6 white--text">(153)</div>
-    </div>
-  </div>
-  <!-- end of iklan teratas -->
+  <v-carousel cycle interval="2000">
+    <v-carousel-item
+      v-for="(item, i) in items"
+      :key="i"
+      :src="item.src"
+      reverse-transition="fade-transition"
+      transition="fade-transition"
+      class="top-image"
+    ></v-carousel-item>
+  </v-carousel>
 </template>
 
 <style scoped>
@@ -61,9 +51,7 @@ export default {
   name: "IklanB2B",
 
   props: {
-    title: String,
-    details: String,
-    img: String,
+    items: Array,
   },
 
   computed: {

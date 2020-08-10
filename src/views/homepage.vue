@@ -1,102 +1,95 @@
 <template>
   <div>
-    <Title/>
+    <Title />
 
-    <v-container fluid style="background: white">
+    <v-container fluid style="background: white;">
       <v-container class="max-width">
         <!-- iklan teratas -->
-        <div class="text-lg-h5 text-sm-h5 my-10" style="color: black">Iklan Teratas</div>
-        <IklanB2B
-            title="Paket Liburan 2 Hari 1 Malam"
-            details="Pesan
-            sekarang dan dapatkan diskon 20%"
-            img="https://i.pinimg.com/originals/ac/0d/ca/ac0dcafdbde4704892c73eeac81db1b3.jpg"
-        />
+        <div class="text-lg-h5 text-sm-h5 my-10" style="color: black;">
+          Iklan Teratas
+        </div>
+        <IklanB2B :items="slideshow" />
       </v-container>
     </v-container>
 
-    <cat-slider/>
-
+    <cat-slider />
 
     <!--Rekomendasi untuk Anda-->
     <v-container class="max-width" fluid>
       <div class="text-lg-h5 text-sm-h5 my-10">
         Rekomendasi untuk Anda
       </div>
-      <v-container class="d-flex flex-lg-row flex-wrap justify-center rounded-lg white elevation-1">
+      <v-container
+        class="d-flex flex-lg-row flex-wrap justify-center rounded-lg white elevation-1"
+      >
         <div v-for="item in items" v-bind:key="item.key">
           <CardItem
-              v-if="item.id !== ';asdlkfj;ga9083274'"
-              :key="item.key"
-              :itemTitle="item.title"
-              :itemCat="item.cat"
-              :itemPrice="item.price"
-              :itemImg="item.img"
-              :itemUserRating="item.userRating"
-              :itemRating="item.rating"
-              :itemLocation="item.location"
-              :xSmall=true
+            v-if="item.id !== ';asdlkfj;ga9083274'"
+            :key="item.key"
+            :itemTitle="item.title"
+            :itemCat="item.cat"
+            :itemPrice="item.price"
+            :itemImg="item.img"
+            :itemUserRating="item.userRating"
+            :itemRating="item.rating"
+            :itemLocation="item.location"
+            :xSmall="true"
           />
 
-          <OfferBox v-if="item.id === ';asdlkfj;ga9083274'"/>
+          <OfferBox v-if="item.id === ';asdlkfj;ga9083274'" />
         </div>
 
         <div class="d-flex justify-center my-10">
           <v-btn
-              class="align-self-center"
-              color="deep-orange darken-1"
-              outlined
-              rounded
-              x-large
-              v-on:click="isShowMore = true"
-              v-if="!isShowMore"
-          >Muat Lebih Banyak
-          </v-btn
-          >
+            class="align-self-center"
+            color="deep-orange darken-1"
+            outlined
+            rounded
+            x-large
+            v-on:click="isShowMore = true"
+            v-if="!isShowMore"
+            >Muat Lebih Banyak
+          </v-btn>
         </div>
 
         <!-- see more -->
         <div v-if="isShowMore">
-          <external-ads/>
+          <external-ads />
 
           <v-container class="d-flex flex-lg-row flex-wrap justify-center">
             <div v-for="n in 12" v-bind:key="n">
-              <OfferBox v-if="n === 2 || n === 8"/>
+              <OfferBox v-if="n === 2 || n === 8" />
 
               <CardItem
-                  v-if="n !== 2 && n !== 8"
-                  itemTitle="Mobil Cepat"
-                  itemCat="Transportasi"
-                  itemPrice="Rp. 150Rb / jam"
-                  itemImg="https://images.unsplash.com/photo-1554507650-4490355acbe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-                  :itemUserRating="145"
-                  :itemRating="1"
-                  :xSmall="true"
-                  itemLocation="Kota Surabaya"
+                v-if="n !== 2 && n !== 8"
+                itemTitle="Mobil Cepat"
+                itemCat="Transportasi"
+                itemPrice="Rp. 150Rb / jam"
+                itemImg="https://images.unsplash.com/photo-1554507650-4490355acbe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                :itemUserRating="145"
+                :itemRating="1"
+                :xSmall="true"
+                itemLocation="Kota Surabaya"
               ></CardItem>
             </div>
           </v-container>
 
           <div class="d-flex justify-center my-10">
             <v-btn
-                class="align-self-center"
-                color="deep-orange darken-1"
-                outlined
-                rounded
-                x-large
-            >Lihat Semua Iklan
-            </v-btn
-            >
+              class="align-self-center"
+              color="deep-orange darken-1"
+              outlined
+              rounded
+              x-large
+              >Lihat Semua Iklan
+            </v-btn>
           </div>
         </div>
-
 
         <!-- end of see more -->
       </v-container>
 
       <!-- end of minati -->
-
-
     </v-container>
 
     <!--Sedang Hangat-->
@@ -104,81 +97,77 @@
       <div class="text-lg-h5 text-sm-h5 my-10">
         Paling Banyak Dicari
       </div>
-      <v-container class="d-flex flex-lg-row flex-wrap justify-center rounded-lg white elevation-1">
+      <v-container
+        class="d-flex flex-lg-row flex-wrap justify-center rounded-lg white elevation-1"
+      >
         <CardItem
-            v-for="n in 12"
-            :key="n"
-            itemTitle="Rumah Aman"
-            itemCat="Hunian"
-            itemPrice="Rp. 120.000/hari"
-            itemImg="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
-            :itemUserRating="104"
-            :itemRating="5"
-            :xSmall="true"
-            itemLocation="Kota Surabaya"
-
+          v-for="n in 12"
+          :key="n"
+          itemTitle="Rumah Aman"
+          itemCat="Hunian"
+          itemPrice="Rp. 120.000/hari"
+          itemImg="https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80"
+          :itemUserRating="104"
+          :itemRating="5"
+          :xSmall="true"
+          itemLocation="Kota Surabaya"
         ></CardItem>
 
         <!-- see more -->
         <div v-if="isShowMore">
-          <external-ads/>
+          <external-ads />
 
           <v-container class="d-flex flex-lg-row flex-wrap justify-center">
             <div v-for="n in 12" v-bind:key="n">
-              <OfferBox v-if="n === 2 || n === 8"/>
+              <OfferBox v-if="n === 2 || n === 8" />
 
               <CardItem
-                  v-if="n !== 2 && n !== 8"
-                  itemTitle="Mobil Cepat"
-                  itemCat="Transportasi"
-                  itemPrice="Rp. 150Rb / jam"
-                  itemImg="https://images.unsplash.com/photo-1554507650-4490355acbe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-                  :itemUserRating="145"
-                  :itemRating="1"
-                  :xSmall="true"
-                  itemLocation="Kota Surabaya"
-
+                v-if="n !== 2 && n !== 8"
+                itemTitle="Mobil Cepat"
+                itemCat="Transportasi"
+                itemPrice="Rp. 150Rb / jam"
+                itemImg="https://images.unsplash.com/photo-1554507650-4490355acbe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                :itemUserRating="145"
+                :itemRating="1"
+                :xSmall="true"
+                itemLocation="Kota Surabaya"
               ></CardItem>
             </div>
           </v-container>
 
           <div class="d-flex justify-center my-10">
             <v-btn
-                class="align-self-center"
-                color="deep-orange darken-1"
-                outlined
-                rounded
-                x-large
-            >Lihat Semua Iklan
-            </v-btn
-            >
-          </div>
-        </div>
-
-        <div class="d-flex justify-center my-10">
-          <v-btn
               class="align-self-center"
               color="deep-orange darken-1"
               outlined
               rounded
               x-large
-              v-on:click="isShowMore = true"
-              v-if="!isShowMore"
-          >Muat Lebih Banyak
-          </v-btn
-          >
+              >Lihat Semua Iklan
+            </v-btn>
+          </div>
+        </div>
+
+        <div class="d-flex justify-center my-10">
+          <v-btn
+            class="align-self-center"
+            color="deep-orange darken-1"
+            outlined
+            rounded
+            x-large
+            v-on:click="isShowMore = true"
+            v-if="!isShowMore"
+            >Muat Lebih Banyak
+          </v-btn>
         </div>
 
         <!-- end of see more -->
       </v-container>
-
-
     </v-container>
 
-    <div style="margin-top: 3vw;"/>
+    <div style="margin-top: 3vw;" />
     <!--    <statistics/>-->
 
-    <unduh-app/>
+    <unduh-app />
   </div>
 </template>
 
@@ -196,7 +185,6 @@ import OfferBox from "@/components/homepage/offerbox";
 import IklanB2B from "@/components/iklanb2b";
 
 import "../stylesheet/home.css";
-
 
 export default {
   // title: 'Rentaru',
@@ -222,6 +210,20 @@ export default {
     },
   },
   data: () => ({
+    slideshow: [
+      {
+        src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",
+      },
+      {
+        src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
+      },
+      {
+        src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
+      },
+      {
+        src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
+      },
+    ],
     items: [
       {
         id: "8092375e928357",
@@ -229,10 +231,10 @@ export default {
         cat: "Fashion",
         price: "Rp. 30Rb/hari",
         img:
-            "https://ecs7.tokopedia.net/img/cache/700/product-1/2018/9/5/1945128/1945128_6a4e554e-589c-4505-91da-63c39c400dfd_1000_1000.jpg",
+          "https://ecs7.tokopedia.net/img/cache/700/product-1/2018/9/5/1945128/1945128_6a4e554e-589c-4505-91da-63c39c400dfd_1000_1000.jpg",
         rating: 4,
         userRating: 42,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: "91237012983jurhklsa",
@@ -240,10 +242,10 @@ export default {
         cat: "Mobil",
         price: "Rp. 200rb/jam",
         img:
-            "https://cdn2.mobilwow.com/images/cars/49677-honda-jazz-2018-1-e9fc90eeb4917d3f4c5c689da2c1041f.jpg",
+          "https://cdn2.mobilwow.com/images/cars/49677-honda-jazz-2018-1-e9fc90eeb4917d3f4c5c689da2c1041f.jpg",
         rating: 5,
         userRating: 32,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: ";rrasdlkfj;a9083274",
@@ -251,10 +253,10 @@ export default {
         cat: "Benda",
         price: "Rp. 50Rb/jam",
         img:
-            "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 4,
         userRating: 78,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: "alskdjf9w08a9083274",
@@ -262,10 +264,10 @@ export default {
         cat: "Benda",
         price: "Rp. 50Rb/jam",
         img:
-            "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 2,
         userRating: 32,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: "91237012agd983jhklsa",
@@ -273,10 +275,10 @@ export default {
         cat: "Mobil",
         price: "Rp. 200rb/jam",
         img:
-            "https://cdn2.mobilwow.com/images/cars/49677-honda-jazz-2018-1-e9fc90eeb4917d3f4c5c689da2c1041f.jpg",
+          "https://cdn2.mobilwow.com/images/cars/49677-honda-jazz-2018-1-e9fc90eeb4917d3f4c5c689da2c1041f.jpg",
         rating: 5,
         userRating: 32,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: "8092375928w357",
@@ -284,10 +286,10 @@ export default {
         cat: "Fashion",
         price: "Rp. 30Rb/hari",
         img:
-            "https://ecs7.tokopedia.net/img/cache/700/product-1/2018/9/5/1945128/1945128_6a4e554e-589c-4505-91da-63c39c400dfd_1000_1000.jpg",
+          "https://ecs7.tokopedia.net/img/cache/700/product-1/2018/9/5/1945128/1945128_6a4e554e-589c-4505-91da-63c39c400dfd_1000_1000.jpg",
         rating: 4,
         userRating: 42,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: "9123701w2983jhklsa",
@@ -295,10 +297,10 @@ export default {
         cat: "Mobil",
         price: "Rp. 200rb/jam",
         img:
-            "https://cdn2.mobilwow.com/images/cars/49677-honda-jazz-2018-1-e9fc90eeb4917d3f4c5c689da2c1041f.jpg",
+          "https://cdn2.mobilwow.com/images/cars/49677-honda-jazz-2018-1-e9fc90eeb4917d3f4c5c689da2c1041f.jpg",
         rating: 5,
         userRating: 32,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: ";asdlkfj;ga9083274",
@@ -306,10 +308,10 @@ export default {
         cat: "Benda",
         price: "Rp. 50Rb/jam",
         img:
-            "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 4,
         userRating: 78,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: "awlskdjf908a9083274",
@@ -317,10 +319,10 @@ export default {
         cat: "Benda",
         price: "Rp. 50Rb/jam",
         img:
-            "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 2,
         userRating: 32,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: ";asdlkfj;aff90g83274",
@@ -328,10 +330,10 @@ export default {
         cat: "Benda",
         price: "Rp. 50Rb/jam",
         img:
-            "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 4,
         userRating: 78,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: "alwskdjf90af8a9083274",
@@ -339,10 +341,10 @@ export default {
         cat: "Benda",
         price: "Rp. 50Rb/jam",
         img:
-            "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 2,
         userRating: 32,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
       {
         id: "alwskdjf90af8a9083aa274",
@@ -350,19 +352,20 @@ export default {
         cat: "Benda",
         price: "Rp. 50Rb/jam",
         img:
-            "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
+          "https://images.unsplash.com/photo-1593173493821-2fa8e0a45420?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=290&q=80",
         rating: 2,
         userRating: 32,
-        location: 'Kota Surabaya',
+        location: "Kota Surabaya",
       },
     ],
     isShowMore: false,
     externalAds: [
       {
         id: ";asdlkfj;a9083asd4",
-        imgUrl: "https://i.pinimg.com/originals/ac/0d/ca/ac0dcafdbde4704892c73eeac81db1b3.jpg"
+        imgUrl:
+          "https://i.pinimg.com/originals/ac/0d/ca/ac0dcafdbde4704892c73eeac81db1b3.jpg",
       },
-    ]
+    ],
   }),
 };
 </script>
